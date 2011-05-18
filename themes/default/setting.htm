@@ -1,0 +1,240 @@
+{template header}
+    <div id="Wrapper"> 
+    <div id="Main"> 
+        <div id="Sidebar">   
+        </div> 
+        {template sidebar}
+        <div id="Content">
+        <!--{if $msg!=''}--> 
+            <div class="box">
+                <div class="inner">$msg</div>
+            </div>
+            <div class="sep20"></div>
+            <!--{/if}-->
+            <div class="box"> 
+                <div class="cell"><span class="fade"><a href="$_URL">HNNU</a> <span class="chevron">&nbsp;›&nbsp;</span> 设置</span></div> 
+                <div class="inner"> 
+                    <form action="$_URL/setting" method="POST"> 
+                    
+                    <table cellpadding="5" cellspacing="0" border="0"> 
+        			    <tr> 
+        			        <td width="120" align="right"> 
+        			            用户名
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            $info[nickname]
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td align="right"> 
+        			            电子邮件
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <input type="text" class="sl" name="email" value="$info[email]" /> 
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td align="right"> 
+        			            个人网站
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <input type="text" class="sl" name="website" value="$info[website]" /> 
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td align="right"> 
+        			            系别
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <input type="text" class="sl" name="location" value="$info[location]" maxlength="40" /> 
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td align="right"> 
+        			            签名
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <input type="text" class="sl" name="tagline" value="$info[tagline]" /> 
+        			        </td> 
+        			    </tr> 
+                        <tr> 
+        			        <td align="right"> 
+        			            个人简介
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <textarea class="ml" name="bio">$info[bio]</textarea> 
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td align="right"> 
+        			            Weibo
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <input type="text" class="sl" name="weibo" value="$info[weibo]" /> 
+        			        </td> 
+        			    </tr> 
+                        <tr> 
+        			        <td align="right"> 
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <input type="submit" value="保存设置" class="super normal button" /> 
+        			        </td> 
+        			    </tr> 
+        			</table> 
+                    </form> 
+                </div> 
+            </div> 
+            <div class="sep20"></div> 
+            <div class="box"> 
+                <div class="cell"><span class="fade">头像</span></div> 
+                <div class="inner"> 
+        			<table cellpadding="5" cellspacing="0" border="0"> 
+        			    <tr> 
+        			        <td width="120" align="right"> 
+        			            当前头像
+        			        </td> 
+        			        <td align="left"> 
+        			            <img src="$avatar_large" border="0" />&nbsp; 
+													<img src="$avatar_normal" border="0" />&nbsp;
+													<img src="$avatar_mini" border="0" />&nbsp;
+        			        </td> 
+        			    </tr> 
+        				<tr> 
+        			        <td align="right"> 
+ 
+        			        </td> 
+        			        <td align="left"> 
+        			            <div class="sep5"></div> 
+        			            <a href="$_URL/setting/avatar" class="super normal button">上传新头像</a> &nbsp; <!--<span class="fade">本站亦支持　<a href="http://www.gravatar.com/" target="_blank">Gravatar</a></span>--> 
+        			        </td> 
+        			    </tr> 
+        			</table> 
+                  
+                </div> 
+            </div> 
+            <div class="sep20"></div> 
+            <div class="box"> 
+                <div class="cell"> 
+                    <span class="fade">安全</span> 
+                </div> 
+                <div class="inner"> 
+                    <form action="$_URL/setting" method="post"> 
+                    
+        			<strong class="fade">如果你不想更改密码，请留空以下输入框。</strong> 
+        			
+        			<div class="sep5"></div> 
+        			<table cellpadding="5" cellspacing="0" border="0"> 
+        			    <tr> 
+        			        <td width="120" align="right"> 
+        			            当前密码
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <input type="password" class="sl" name="password_current" value="" /> 
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td align="right"> 
+        			            新密码
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <input type="password" class="sl" name="password_new" value="" /> 
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td align="right"> 
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <input type="submit" value="更改密码" class="super normal button" /> 
+        			        </td> 
+        			    </tr> 
+        			</table> 
+                    </form> 
+                </div> 
+            </div> 
+            <div class="sep20"></div> 
+            <div class="box"> 
+                <div class="cell"><span class="fade">腾讯微博</span></div> 
+                <div class="cell"> 
+                <!--{if $info[sync]==1}-->
+                <table cellpadding="5" cellspacing="0" border="0">
+                        
+                        <tbody><tr>
+        			        <td width="120" align="right">
+        			            <img src="{$qq[data][head]}/50">
+        			        </td>
+        			        <td width="200" align="left">
+        			            {$qq[data][nick]} <span class="fade">@<a href="http://t.qq.com/{$qq[data][name]}" target="_blank">{$qq[data][nick]}</a></span>
+        			            <div class="sep5"></div>
+        			            <span class="fade">
+        			            $qq[data][tweetnum] 广播
+        			            <div class="sep3"></div>
+        			            $qq[data][fansnum] 听众, 收听 $qq[data][idolnum]
+        			            </span>
+        			        </td>
+        			    </tr>
+        			    <tr>
+        			        <td align="right">
+        			        </td>
+        			        <td width="200" align="left">
+        			            <input type="submit" value="Unlink My 腾讯微博 Account" class="super normal button" onclick="location.href = '$_URL/qq/unlink'">
+        			        </td>
+        			    </tr>
+                        
+        			</tbody></table>
+        			<!--{else}-->
+                    <table cellpadding="5" cellspacing="0" border="0"> 
+                        
+                        <tr> 
+        			        <td width="120" align="right"> 
+        			            帐号状态
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <span class="fade">腾讯微博 帐号尚未绑定</span> 
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td align="right"> 
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <input type="submit" value="Link My 腾讯微博 Account" class="super normal button" onclick="location.href = '$_URL/qq/link'" /> 
+        			        </td> 
+        			    </tr> 
+                        
+        			</table>
+        			<!--{/if}--> 
+                </div> 
+                <div class="inner"> 
+                    通过 OAuth 可以安全地绑定你的 腾讯微博 账户，之后即可同步你的主题和回复、附近聊天。
+                </div> 
+            </div> 
+            
+            <div class="sep20"></div> 
+            <div class="box" id="invit"> 
+                <div class="cell"><span class="fade">我的邀请码</span></div> 
+                <div class="cell"> 
+          
+                <table cellpadding="5" cellspacing="0" border="0">
+                        
+                        <tbody><tr>
+        			       <tr> 
+        			        <td width="120" align="right"> 
+        			           邀请码
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <input type="text" class="sl" name="code" value="$code" /> 
+        			        </td> 
+        			    </tr> 
+            			</tbody></table>
+        			        			
+                </div> 
+                <div class="inner"> 
+                    邀请3位好友成功注册HNNU，即可获得呼风唤雨勋章。
+                </div> 
+            </div> 
+            
+            
+        </div> 
+    <div class="c"></div> 
+    </div> 
+    </div> 
+    {template footer} 

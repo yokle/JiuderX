@@ -1,0 +1,176 @@
+{template header}
+<div class="body_bg">
+<!-- 主部开始 -->
+<script type="text/javascript" src="$_CONFIG[js]/jquery.jcarousel.min.js"></script>
+<link type="text/css" href="$_CONFIG[style]/slide.css" rel="stylesheet" />
+<script type="text/javascript">
+//<![CDATA[
+jQuery(document).ready(function() {
+	jQuery('.first-and-second-carousel').jcarousel();
+	jQuery('#third-carousel').jcarousel({vertical: true});
+});
+//]]>
+</script>
+<div class="container">
+	<div class="banner">
+    	<div class="block">
+            <div class="left">&nbsp;</div>
+            <div class="button">
+            	<a href="" class="user_enter"></a>
+            	<a href="" class="des_enter"></a>
+            </div>
+        </div>
+    </div>
+    <div class="block">
+        <div class="index">
+            <div class="left">
+                <div class="index_working">
+                    <h6><span>现在进行时</span></h6>
+                    <div class="user_brief f_l">
+                    <div class="tag_recommend"></div>
+                        <div class="brief f_l">
+                            <a href=""><img src="$index_focus[0][profile_image_url]" width="200" height="150" /></a>
+                            <p class="name"><a href="$index_focus[0][domain]">$index_focus[0][screenname]</a><span class="tag_designer" title="设计师"></span><!--{if $index_focus[0][verified]=='true'}--><span class="tag_ensure" title="平台认证"></span><!--{/if}--></p>
+                            <p>$index_focus[0][info]</p>
+                            <dl>
+                                <dt>粉丝：</dt><dd><a href="">323</a></dd>
+                                <dt>项目：</dt><dd><a href="">323</a></dd>
+                                <dt>图片：</dt><dd><a href="">323</a></dd>
+                                <dt>说说：</dt><dd><a href="">32334</a></dd>
+                            </dl>
+                      </div>
+                        <div class="case">
+                            <p>$index_focus_project[project_info]</p>
+                            <p>业主：<a href="">$index_focus_project[screenname]</a><br />施工：<a href="">mike jones</a></p>
+                        </div>
+                  </div>
+                  <ul class="index_working_ul">
+                  <!--{loop $new_tweet $new_tweet}-->
+                  	<li>
+                    	<img src="$new_tweet[profile_image_url]" /><span><a href="$new_tweet[domain]">$new_tweet[screenname]：</a><!--{if $new_tweet[timeline][content]==''}-->$new_tweet[timeline][title]<!--{else}-->$new_tweet[timeline][content]<!--{/if}--></span>
+                    </li>
+                  	<!--{/loop}-->
+                  </ul>
+              </div>
+              <div class="blank15"></div>
+              <div class="index_main">
+              	<h6><span>设计师</span><a href="designer">更多</a></h6>
+              	<!--{loop $recommend_designer $designer}-->
+                <div class="brief">
+                	<!--{if $designer[if_recommend]=='1'}--><div class="tag_recommend"></div><!--{/if}-->
+                    <a href="$designer[domain]"><img src="$designer[profile_image_url]" width="200" height="150" /></a>
+                    <p class="name"><a href="$designer[domain]">$designer[screenname]</a><span class="tag_designer" title="设计师"></span><!--{if $designer[verified]=='true'}--><span class="tag_ensure" title="平台担保"></span><!--{/if}--></p>
+                    <dl>
+                        <dt>粉丝：</dt><dd><a href="$designer[domain]?app=follow&act=fans">$designer[friends_count]</a></dd>
+                        <dt>项目：</dt><dd><a href="$designer[domain]?app=case">$designer[case_count]</a></dd>
+                        <dt>图片：</dt><dd><a href="$designer[domain]?app=photo">$designer[picture_count]</a></dd>
+                        <dt>动态：</dt><dd><a href="$designer[domain]">$designer[timeline_count]</a></dd>
+                    </dl>
+              	</div>
+              	<!--{/loop}-->
+                
+              </div>
+              <div class="blank15"></div>
+              <div class="index_main">
+              	<h6><span>施工</span><a href="construction">更多</a></h6>
+              	<!--{loop $recommend_construction $construction}-->
+              	<div class="brief construction">
+                <!--{if $construction[if_recommend]=='1'}--><div class="tag_recommend"></div><!--{/if}-->
+                   <p class="name"><a href="$list[domain]">$construction[screenname]</a>$config_identit[$construction[identity]]<!--{if $list[verified]=='true'}--><span class="tag_ensure" title="平台认证"></span><!--{/if}--></p>
+                    <dl>
+                        <dt>粉丝：</dt><dd><a href="$construction[domain]?app=follow&act=fans">$construction[friends_count]</a></dd>
+                        <dt>项目：</dt><dd><a href="$construction[domain]?app=case">$construction[case_count]</a></dd>
+                    </dl>
+              	</div>
+              	<!--{/loop}-->
+              
+              
+              </div>
+            </div>
+            <div class="right">
+            	<div class="index_notice">
+                	<div class="tab">
+                        <ul>
+                            <li>公告</li>
+                            <li>保障</li>
+                        </ul>
+                    </div>
+                    <ol>
+                    <!--{loop $notice $notice}-->
+                    	<li><a href="news/$notice[article_id]">$notice[article_title]</a></li>
+                    <!--{/loop}-->
+                    </ol>
+                </div>
+                <div class="index_right_box">
+                	<h5><span>近期开工业主</span><font><a href="" class="tag_down" title="上一页"></a><a href="" class="tag_up" title="下一页"></a></font></h5>
+                    <div class="content">
+                    	<ul>
+                        	
+                            <!--{eval $i=0}-->
+                            <!--{loop $near_begin $near_begin}-->
+                            <!--{if $i==0}-->
+                            <li class="first">
+                            	<a href="" class="img"><img src="photo/item.jpg" height="75" width="75" /></a>
+                                <span>
+                                	<p>设计：<a href="">有钱人李峰</a></p>
+                                	<p>施工：<a href="">有钱人李峰</a></p>
+                                	<p>业主：<a href="">有钱人李峰</a></p>
+                                	<p>监理：<a href="">有钱人李峰</a></p>
+                                </span>
+                                <p><font class="tag_ensure"></font><a href="case/$near_begin[project_id]">$near_begin[project_name]</a></p>
+                            </li>
+                            <!--{else}-->
+                        	<li><img src="$near_begin[case_image]" /><span><font class="tag_ensure"></font><a href="case/$near_begin[project_id]">$near_begin[project_name]</a></span></li>
+                        	<!--{/if}-->
+                        	<!--{eval $i++;}-->
+                        	<!--{/loop}-->
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="index_right_box">
+                	<h5><span>近期招标业主</span><font><a href="" class="tag_down" title="上一页"></a><a href="" class="tag_up" title="下一页"></a></font></h5>
+                    <div class="content">
+                    	<ul>
+                    	<!--{loop $bidding_list $bidding_list}-->
+                        	<li><strong class="index_bids">$bidding_list[computation]位数</strong><span><font class="tag_ensure"></font><a href="case/$bidding_list[project_id]">$bidding_list[project_name]</a>&nbsp;($bidding_list[addtime])</span></li>
+                        <!--{/loop}-->
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="index_right_box">
+                	<h5><span>我爱我家</span><font><a href="" class="tag_down" title="上一页"></a><a href="" class="tag_up" title="下一页"></a></font></h5>
+                    <div class="content">
+                    	<ul>
+                    	<!--{loop $love_list $love_list}-->
+                        	<li><img src="$love_list[case_image]" /><span><font class="tag_ensure"></font><a href="case/$love_list[project_id]">$love_list[project_name]</a><br />$love_list[endtime] 完工</span></li>
+                    <!--{/loop}-->
+                        </ul>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="blank15"></div>
+            <div class="block">
+            	<div class="index_show">
+            		<h6>项目展示</h6>
+                    <ul id="first-carousel" class="first-and-second-carousel jcarousel-skin-tango">
+                        <li><a href="" title=""><img src="photo/item.jpg" width="220" height="220" alt="李峰的家" /></a></li>
+                        <li><a href="" title=""><img src="photo/item1.jpg" width="220" height="220" alt="李峰的家" /></a></li>
+                        <li><a href="" title=""><img src="photo/item2.jpg" width="220" height="220" alt="李峰的家" /></a></li>
+                        <li><a href="" title=""><img src="photo/item3.jpg" width="220" height="220" alt="李峰的家" /></a></li>
+                        <li><a href="" title=""><img src="photo/item4.jpg" width="220" height="220" alt="李峰的家" /></a></li>
+                        <li><a href="" title=""><img src="photo/item5.jpg" width="220" height="220" alt="李峰的家" /></a></li>
+                        <li><a href="" title=""><img src="photo/item6.jpg" width="220" height="220" alt="李峰的家" /></a></li>
+                        <li><a href="" title=""><img src="photo/item7.jpg" width="220" height="220" alt="李峰的家" /></a></li>
+                        <li><a href="" title=""><img src="photo/item8.jpg" width="220" height="220" alt="李峰的家" /></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+</div>
+{template footer}

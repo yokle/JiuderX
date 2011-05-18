@@ -1,0 +1,76 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>九度装修设计交流平台</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="IE=7" /> 
+<meta name="alexaVerifyID" content="8itXFZsHbEIm-LUNHfD2q3xw-Ek" /> 
+<meta content="九度 装修 设计 家装 建材 设计师 施工队 图库" name="keywords"/> 
+<meta content="九度装修设计交流平台为广大业主提供可靠的装修选择，为设计师提供展示的平台！"  name="description" /> 
+<meta content="jiuder.com" name="copyright" /> 
+<link rel="shortcut icon" href="http://www.jiuder.com/favicon.ico"/>
+<link type="text/css" href="$_CONFIG[style]/public.css" rel="stylesheet" />
+<link type="text/css" href="$_CONFIG[style]/style.css" rel="stylesheet"	 />
+<script type="text/javascript">
+//<![CDATA[
+var host="$_URL";
+var js_image="$DES_CONFIG[image]";
+var domain="$user_domain";
+var my_uid="$user_uid";
+//]]>
+</script>
+<script type="text/javascript" src="$_CONFIG[js]/jquery.min.js"></script>
+<script type="text/javascript" src="$_CONFIG[js]/js.js"></script>
+<script type="text/javascript" src="$_CONFIG[js]/boot.js"></script>
+<script type="text/javascript" src="$_CONFIG[js]/DD_belatedPNG_0.0.8a-min.js"></script>
+<script type="text/javascript" src="$_CONFIG[js]/jquery.infinitescroll.js"></script>
+<script type="text/javascript" src="$_CONFIG[js]/ower.js"></script>
+<script>
+if ($.browser.msie && $.browser.version == '8.0') {
+} else {
+	DD_belatedPNG.fix('.pngFix');
+}
+</script>
+</head>
+<body>
+
+<!-- 头部结束 -->
+<div class="header">
+        <div class="header_1">
+        	<div class="block">
+                <div class="header_slogan">九度装修设计交流平台为广大业主提供可靠的装修选择，<a href="" title="点击进入帮助" target="_blank">如何选择装修？！</a></div>
+                <ul>
+                <!--{if $user_uid}-->
+                <li><a href="$_URL/logout">退出</a></li>
+                <li><a href="$_URL/">装修计算器</a></li>
+                <li><a href="$_URL/$user_domain?app=project&act=new">我要装修</a></li>
+                <li><a href="$_URL/$user_domain">我的九度</a></li>
+                <!--{else}-->
+                    <li><a href="$_URL/login">登录</a></li>
+                    <li><a href="$_URL/register">注册</a></li>
+                                        <li><a href="">装修计算器</a></li>
+                    <li><a href="$_URL/">我要装修</a></li>
+                <!--{/if}-->
+
+                </ul>
+            </div>
+        </div>
+    <div class="header_2">
+    	<div class="block">
+        	<div class="logo"><a href=""></a></div>
+            <ul>
+            	<li><a href="$_URL/index">首页</a></li>
+            	<li><a href="$_URL/designer">设计师</a></li>
+            	<li><a href="$_URL/construction">施工队</a></li>
+            	<li><a href="$_URL/case">项目</a></li>
+                <li></li>
+            </ul>
+            <div class="header_search">
+            	<form name="" action="" method="post">
+                	<input type="text" value="找设计师/施工队/装修项目" name="" class="search_input" /><input type="submit" value="" class="search_submit" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+

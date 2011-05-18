@@ -1,0 +1,69 @@
+{template header}
+    <div id="Wrapper"> 
+    <div id="Main"> 
+        <div id="Sidebar">   
+        </div> 
+        {template sidebar}
+             <div id="Content"> 
+            <div class="box"> 
+                <div class="cell"><div class="fr"><!-- TODO: Check-in --></div> 
+                <span class="bigger fade"><a href="$_URL">HNNU</a> <span class="chevron">&nbsp;›&nbsp;</span> $ip</span> 
+                </div> 
+                <!--{if $ip==$myip}-->
+                <div class="cell"> 
+                <h1 class="place_title">$ip</h1> 
+                <!--<div class="sep10"></div>
+                <span class="place_visitors">0 visitors so far</span>--> 
+                </div> 
+                
+                <div class="cell"><div class="fr"><strong><span class="snow bigger" id="tc">280</span></strong></div> 
+                    <span class="place_say"><img src="$_URL/$_CONFIG[image]/say.png" align="absmiddle" /> &nbsp; Say something about this place?</span> 
+                    <div class="sep10"></div> 
+                    <script type="text/javascript"> 
+    var updateCount = function() {
+        s = document.getElementById("say");
+        r = 280 - s.value.length;
+        tc = document.getElementById("tc");
+        tc.innerHTML = r;
+    }
+</script> 
+<form method="post" action="$_URL/place/$ip"> 
+<textarea class="mll short" name="say" maxlength="280" id="say" onkeyup="updateCount();"></textarea> 
+<div class="sep10"></div> 
+<div class="fr"><input type="submit" value="Say" class="super normal button" /></div> 
+<div class="sep10"></div> 
+<div class="sep10"></div> 
+<div class="sep5"></div> 
+</form> 
+<script type="text/javascript"> 
+    var focusStatus = function() {
+        s = document.getElementById("say");
+        s.focus();
+    }
+    
+    setTimeout("focusStatus()", 200);
+</script> 
+                </div> 
+                
+                
+                <!--{loop $list $list}-->
+                <div class="cell"> 
+                <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr> 
+                	<td valign="top" class="avatar"><a href="$_URL/$list[nickname]"><img src="$list[user_image]" border="0" /></a></td> 
+                	<td style="padding-left: 12px" valign="top"><div class="fr"><span class="created">$list[addtime] <!--{if $list[uid]==$user_uid}-->&nbsp; <a href="#;" onclick="if (confirm('确认删除？')) { location.href = ''; }" class="tiny_label">DELETE</a><!--{/if}--></span></div><span class="fade" style="font-size: 10px;"><strong><a href="$_URL/$list[nickname]" class="dark">$list[nickname]</a></strong></span> 
+                	    <div class="sep5"></div> 
+                	    <span class="bigger" style="font-size: 14px; line-height: 120%;">$list[message]</span> 
+                	</td> 
+                	</tr> 
+                </table> 
+                </div> 
+               <!--{/loop}--> 
+                
+         <!--{/if}-->       
+                
+            </div> 
+        </div> 
+    <div class="c"></div> 
+    </div> 
+    </div> 
+      {template footer} 

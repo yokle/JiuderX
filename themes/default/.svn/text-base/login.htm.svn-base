@@ -1,0 +1,54 @@
+{template header}
+<!-- 主部开始 -->
+<div class="body_bg">
+<div class="container login-register">
+    <div class="block">
+    	<div class="login selected">
+        	<h3>登录</h3>
+            <h4>发布装修日记，晒图</h4>
+            <div class="tip $msg" id="login_tip">
+            	请输入正确的用户名或者密码<br />
+                <a href="" target="_blank">找回密码</a>
+            </div>
+            <form action="login" method="post" class="input_form">
+            	<p>电子邮件/用户名：</p>
+                <input type="text" name="login_name" id="login_name" class="input" />
+            	<p class="crack">密码：</p>
+                <input type="password" name="login_pwd" id="login_pwd" class="input"/>
+                <div class="crack">
+                	<label id="rememberme"><input type="checkbox" name="autologin" value="1"/>下次自动登录</label>
+                </div>
+                <input type="hidden" name="action" value="login">
+                <input type="submit" value="登 录" id="login" class="submit crack" />
+            </form>
+        </div>
+        <div class="register">
+        	<h3>注册</h3>
+            <h4>加入我们，走走看看寻寻，这儿有最好的设计</h4>
+            <div class="tip none"  id="register_tip">
+            	
+            </div>
+             <form action="" method="post" class="input_form">
+            	<p>电子邮件：</p>
+                <input type="text" name="email" id="email" class="input" />
+            	<p class="crack">用户名：</p>
+                <input type="text" name="screenname" id="screenname" class="input" />
+            	<p class="crack">密码：</p>
+                <input type="password" name="pwd" id="pwd" class="input"/>
+                <p class="crack">重复密码：</p>
+                <input type="password" name="repwd" id="repwd" class="input"/>
+                <p class="crack">个性域名：</p>
+                <input type="text" name="domain" id="domain" class="input"/>
+                <div class="crack">
+                	<label id="agreement"><input type="checkbox" name="agreement" value="1" checked="checked"/>用户协议</label>
+                </div>
+                <input type="hidden" name="action" value="register">
+                <input type="submit" value="注 册" id="register" class="submit crack" />
+            </form>
+        </div>
+        <div class="illustrate"></div>
+    	<div class="blank15"></div>
+    </div>
+</div>
+</div>
+{template footer}

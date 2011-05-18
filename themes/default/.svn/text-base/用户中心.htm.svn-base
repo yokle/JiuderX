@@ -1,0 +1,161 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>九度装修设计交流平台</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta http-equiv="x-ua-compatible" content="IE=7" /> 
+<meta name="alexaVerifyID" content="8itXFZsHbEIm-LUNHfD2q3xw-Ek" /> 
+<meta content="九度 装修 设计 家装 建材 设计师 施工队 图库" name="keywords"/> 
+<meta content="九度装修设计交流平台为广大业主提供可靠的装修选择，为设计师提供展示的平台！"  name="description" /> 
+<meta content="jiuder.com" name="copyright" /> 
+<link rel="shortcut icon" href="http://www.jiuder.com/favicon.ico"/>
+<link type="text/css" href="css/public.css" rel="stylesheet" />
+<link type="text/css" href="css/style.css" rel="stylesheet"	 />
+<link type="text/css" href="css/slide.css" rel="stylesheet"	 />
+<script type="text/javascript" src="js/jquery-1.4.2.min.js"></script>
+<script type="text/javascript" src="js/js.js"></script>
+<script type="text/javascript" src="js/DD_belatedPNG_0.0.8a-min.js"></script>
+<script>
+if ($.browser.msie && $.browser.version == '8.0') {
+} else {
+	DD_belatedPNG.fix('.pngFix');
+}
+</script>
+</head>
+<body>
+
+<!-- 头部结束 -->
+<div class="header">
+        <div class="header_1">
+        	<div class="block">
+                <div class="header_slogan">九度装修设计交流平台为广大业主提供可靠的装修选择，<a href="" title="点击进入帮助" target="_blank">如何选择装修？！</a></div>
+                <ul>
+                    <li><a href="">登录</a></li>
+                    <li><a href="">注册</a></li>
+                    <li><a href="">装修计算器</a></li>
+                    <li><a href="">我要装修</a></li>
+                </ul>
+            </div>
+        </div>
+    <div class="header_2">
+    	<div class="block">
+        	<div class="logo"><a href=""></a></div>
+            <ul>
+            	<li><a href="">首页</a></li>
+            	<li><a href="">设计师</a></li>
+            	<li><a href="">施工队</a></li>
+            	<li><a href="">项目</a></li>
+            	<li></li>
+            </ul>
+            <div class="header_search">
+            	<form name="" action="" method="post">
+                	<input type="text" value="找设计师/施工队/装修项目" name="" class="search_input" /><input type="submit" value="" class="search_submit" />
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- 主部开始 -->
+<div class="container user_center">
+    <div class="block">
+        <div class="user_center_index">
+            <div class="left">
+            	<div class="my_action">
+                	<div class="my_action_photo"><a href=""><img src="photo/designer_photo7.jpg" height="69" width="92" /></a></div>
+                    <div class="my_action_public">
+                    	<div class="point"></div>
+                    	<ul>
+                        	<li class="talk"><a href=""></a></li>
+                        	<li class="blog"><a href=""></a></li>
+                        	<li class="photo"><a href=""></a></li>
+                        	<li class="video"><a href=""></a></li>
+                        	<li class="my_item"><a href=""></a></li>
+                        </ul>
+                        <div class="tip_box talk_tip">
+                        	<h6><span>说说</span><a href="">关闭</a></h6>
+                            <form name="" action="" class="input_form">
+                            	<textarea name="" class="input"></textarea>
+                                <div align="right"><input type="submit" value="提 交" class="submit" /></div>
+                            </form>
+                    	</div>
+                    </div>
+                    
+                </div>
+            </div>
+            <div class="right">
+            	
+            </div>
+            <div class="blank15"></div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- 尾部 -->
+<div class="footer">
+	<div class="block">
+    	<div class="scissors"></div>
+        <div class="footer_nav">
+            <dl class="footer_type">
+                <dt>房型</dt>
+                <dd><a href="">一室户</a></dd>
+                <dd><a href="">一室一厅</a></dd>
+                <dd><a href="">二室户</a></dd>
+                <dd><a href="">二室一厅</a></dd>
+                <dd><a href="">二室两厅</a></dd>
+                <dd><a href="">三室一厅</a></dd>
+                <dd><a href="">三室两厅</a></dd>
+                <dd><a href="">别墅</a></dd>
+                <dd><a href="">其他</a></dd>
+            </dl>
+            <dl class="footer_style">
+                <dt>风格</dt>
+                <dd><a href="">简约</a></dd>
+                <dd><a href="">古典</a></dd>
+                <dd><a href="">流行</a></dd>
+                <dd><a href="">地中海</a></dd>
+                <dd><a href="">田园</a></dd>
+                <dd><a href="">美式</a></dd>
+                <dd><a href="">欧式</a></dd>
+                <dd><a href="">东南亚</a></dd>
+                <dd><a href="">日式</a></dd>
+                <dd><a href="">中式</a></dd>
+                <dd><a href="">非洲</a></dd>
+                <dd><a href="">英伦</a></dd>
+                <dd><a href="">法式</a></dd>
+                <dd><a href="">瑞典</a></dd>
+                <dd><a href="">意大利</a></dd>
+                <dd><a href="">俄罗斯</a></dd>
+                <dd><a href="">混搭</a></dd>
+                <dd><a href="">巴洛克</a></dd>
+                <dd><a href="">洛可可</a></dd>
+                <dd><a href="">LOFT风格</a></dd>
+                <dd><a href="">SOHO族</a></dd>
+                <dd><a href="">波普风</a></dd>
+                <dd><a href="">乐活族</a></dd>
+            </dl>
+            <dl class="footer_us">
+                <dt>联系我们</dt>
+                <dd><a href="" class="sina_microblog">关注新浪微薄</a></dd>
+                <dd><a href="" class="qq_microblog">关注腾讯微薄</a></dd>
+                <dd><a href="mailto:" class="contact_us">电邮联系我们</a></dd>
+                <dd><a href="" class="work">想要加入我们</a></dd>
+            </dl>
+        </div>
+        <div class="footer_copyright">
+        	<ul>
+            	<li><a href="">帮助</a></li>
+            	<li><a href="">隐私协议</a></li>
+            	<li><a href="">关于我们</a></li>
+            	<li><a href="mailto:">联系我们</a></li>
+            </ul>
+            <div class="copyright">©2011 九度装修设计交流平台 沪ICP备10025764号</div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>

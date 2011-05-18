@@ -1,0 +1,55 @@
+{template header}
+    <div id="Wrapper"> 
+    <div id="Main"> 
+        <div id="Sidebar">   
+        </div> 
+           {template sidebar}
+        <div id="Content"> 
+            <div class="box"> 
+                <div class="cell"> 
+                    <span class="fade"><a href="$_URL">HNNU</a> <span class="chevron">&nbsp;›&nbsp;</span> <a href="$_URL/setting">设置</a> <span class="chevron">&nbsp;›&nbsp;</span> 上传新头像</span> 
+                </div> 
+ 
+    			<div class="cell"> 
+    			<table cellpadding="5" cellspacing="0" border="0"> 
+    			    <tr> 
+    			        <td width="80" align="right"> 
+    			            当前的头像
+    			        </td> 
+    			        <td width="200" align="left"> 
+											<img src="$avatar_large" border="0" />&nbsp; 
+													<img src="$avatar_normal" border="0" />&nbsp;
+													<img src="$avatar_mini" border="0" />&nbsp;
+    			        </td> 
+    			    </tr> 
+    			</table> 
+    			</div> 
+                <div class="inner"> 
+                    <form enctype="multipart/form-data" action="$_URL/setting/avatar" method="post"> 
+                    <span class="fade">支持 1MB 以内的 PNG / GIF / JPG 图片文件作为头像，推荐使用正方形的透明 PNG 图片以获得最佳效果。</span> 
+        			<div class="sep5"></div> 
+        			<table cellpadding="5" cellspacing="0" border="0"> 
+        			    <tr> 
+        			        <td width="80" align="right"> 
+        			            选择图片文件
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <input type="file" name="avatar" /> 
+        			        </td> 
+        			    </tr> 
+        			    <tr> 
+        			        <td width="80" align="right"> 
+        			        </td> 
+        			        <td width="200" align="left"> 
+        			            <input type="submit" value="上传" class="super normal button" /> 
+        			        </td> 
+        			    </tr> 
+        			</table> 
+        			</form> 
+                </div> 
+            </div> 
+        </div> 
+    <div class="c"></div> 
+    </div> 
+    </div> 
+    {template footer} 

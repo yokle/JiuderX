@@ -1,0 +1,55 @@
+{template header}
+
+    <div id="Wrapper"> 
+    <div id="Main"> 
+        <div id="Sidebar"> 
+            
+        </div> 
+        {template sidebar}
+        <div id="Content"> 
+            <div class="box" id="topics_index"> 
+                <div class="cell"> 
+                    <span class="fade"><a href="$_URL">HNNU</a> <span class="chevron">&nbsp;›&nbsp;</span> 最近的 50 个帖子</span> 
+                </div> 
+                
+<!--{loop $list $list}-->               
+<div class="cell from_$list[tid]"> 
+<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr> 
+	<td valign="top" class="avatar"><a href="$_URL/$list[nickname]"><img src="$list[user_image]" border="0" /></a></td> 
+	<td style="padding-left: 12px" valign="top"> 
+	    
+	        <div class="fr"> 
+	            
+	             <!--{if $list[reply_num]!=0}-->   <a href="$_URL/t/$list[tid]#reply$list[reply_num]" class="count_livid">$list[reply_num]</a> <!--{/if}-->
+	            
+	        </div> 
+	    
+	    <div class="sep3"></div> 
+		<span class="bigger" style="font-size: 16px; line-height: 130%;"><a href="$_URL/t/$list[tid]">$list[title]</a></span> 
+		<div class="sep5"></div> 
+        <span class="created"><strong><a href="$_URL/go/$list[ename]" class="node">$list[name]</a></strong>&nbsp;•&nbsp;<strong><a href="$_URL/$list[nickname]" class="dark">$list[nickname]</a></strong> &nbsp;•&nbsp; $list[strlen] 个字符 &nbsp;•&nbsp; $list[hit] 次点击 &nbsp;•&nbsp; $list[addtime] <!--{if $list[lastreply]!=''}-->replied by <a href="$_URL/$list[lastreply]" class="dark">$list[lastreply]</a><!--{/if}--></span> 
+	</td> 
+	</tr> 
+</table> 
+</div> 
+<!--{/loop}--> 
+ 
+ 
+<script type="text/javascript"> 
+blocked = [];
+$("#topics_index").children('.cell').each( function(index) {
+    for (i in blocked) {
+        if ($(this).hasClass('from_' + blocked[i])) {
+            $(this).css('display', 'none');
+        }
+    }
+});
+</script> 
+ 
+                <div class="inner"><span class="chevron">›</span> <a href="$_URL/changes">继续浏览全站最新更改记录</a></div> 
+            </div> 
+        </div> 
+    <div class="c"></div> 
+    </div> 
+    </div> 
+ {template footer} 

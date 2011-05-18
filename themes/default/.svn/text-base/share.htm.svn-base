@@ -1,0 +1,96 @@
+{template header}
+<div class="container">
+    <div class="block">
+        <div class="share_list">
+            <div class="left">
+              <div class="share_list_contnet">
+              	<h6><span>推荐分享</span></h6>
+              	<!--{loop $list $list}-->
+              	<!--{if $list[share_type]=='diary'}-->
+                <div class="one_share">
+                	<div class="tag">
+                        <h4>分享数</h4>
+                        <p>$list[share_num]</p>
+                    </div>
+                    <div class="content">
+                        <h5><a href="$list[domain]">$list[screenname]</a> 分享日记：<a href="$list[share][url]">$list[share][title]</a><em>$list[addtime]</em></h5>
+                    </div>
+                </div>
+                <!--{elseif $list[share_type]=='video'}-->
+                <div class="one_share">
+                	<div class="tag">
+                        <h4>分享数</h4>
+                        <p>$list[share_num]</p>
+                    </div>
+                    <div class="content">
+                        <h5><a href="$list[domain]">$list[screenname]</a>  分享视频：$list[share][content]<em>$list[addtime]</em></h5>
+                        <table class="share_images" cellspacing="15" cellpadding="0" border="0">
+                            <tr valign="middle"; align="center">
+                                <td><a href="$list[share][url]"><img src="$list[share][pic][0]" onload="resizeImg(this.width,this.height,this,150)"/></a></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!--{elseif $list[share_type]=='photo'}-->
+                <div class="one_share">
+                	<div class="tag">
+                        <h4>分享数</h4>
+                        <p>$list[share_num]</p>
+                    </div>
+                    <div class="content">
+                        <h5><a href="$list[domain]">$list[screenname]</a>  分享照片：$list[share][content]<em>$list[addtime]</em></h5>
+                        <table class="share_images" cellspacing="15" cellpadding="0" border="0">
+                            <tr valign="middle"; align="center">
+                            <!--{loop $list[share][pic] $pic}-->
+                                <td><a href="" title="图片名称"><img src="<!--{eval echo set_image($pic[0])}-->" onload="resizeImg(this.width,this.height,this,100)"/></a></td>
+                                <!--{/loop}-->
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+                <!--{/if}-->
+                <!--{/loop}-->
+
+                
+                
+                
+                
+                <div class="blank10"></div>
+                <!--pager start-->
+                <div class="pager">
+                  <ul>
+                   $pagehtml
+                  </ul>
+                </div>
+                <!--pager end-->
+              </div>
+            </div>
+            <div class="right">
+            	<dl class="choice">
+                	<dt class="search">
+                         <div class="right_search">
+                             <form name="" action="">
+                                 <input value="寻找分享" name="" class="input"/><input type="submit" class="submit" value="" />
+                             </form>
+                         </div>
+                     </dt>
+                </dl>
+                <div class="index_right_box">
+                	<h5><span>最新分享</span><font><a href="" class="tag_down" title="上一页"></a><a href="" class="tag_up" title="下一页"></a></font></h5>
+                    <div class="content">
+                    	<ul>
+                    	<!--{loop $newshare $newshare}-->
+                        	<li><img src="$newshare[profile_image_url]" /><span><!--{if $newshare[share][title]==''}--><a href="$newshare[share][url]">$newshare[share][content]</a><!--{else}--><a href="$newshare[share][url]">$newshare[share][title]</a><!--{/if}--></span></li>
+                        <!--{/loop}-->
+                        </ul>
+                    </div>
+                </div>
+               
+
+            </div>
+            <div class="blank15"></div>
+        </div>
+    </div>
+</div>
+
+{template footer}

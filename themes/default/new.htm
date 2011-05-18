@@ -1,0 +1,48 @@
+{template header}
+    <div id="Wrapper"> 
+    <div id="Main"> 
+        <div id="Sidebar">   
+        </div> 
+        <div id="Rightbar"> 
+            
+            <div class="box"> 
+    <div class="cell">主题创建指南</div> 
+    <div class="inner"> 
+        <strong>主题标题</strong> 
+        <div class="sep5"></div> 
+        
+        <div class="sep10"></div> 
+        <strong>主题内容</strong> 
+        <div class="sep5"></div> 
+        <div class="sep10"></div> 
+        <strong>如何贴图？</strong> 
+        <div class="sep5"></div> 
+        这里支持使用 <a href="http://imgur.com/" target="_blank">imgur</a> 或 直接贴入图片的网络地址，以jpg|png|gif|bmp结尾的网络地址图片均可。
+    </div> 
+</div> 
+        </div> 
+        <div id="Content"> 
+            <div class="box"> 
+                <div class="cell"> 
+                    <span class="bigger"><a href="$_URL">HNNU</a> <span class="chevron">&nbsp;›&nbsp;</span> <a href="$_URL/go/$ename">$node[name]</a> <span class="chevron">&nbsp;›&nbsp;</span> 创建新主题</span> 
+                </div> 
+                <div class="cell"> 
+                    <form action="$_URL/new/$ename" method="post"> 
+                    
+                    <textarea name="title" maxlength="120" class="mll"></textarea> 
+                    <div class="sep10"></div> 
+                    <textarea name="content" class="mll tall"></textarea> 
+                    
+                    <div class="sep10"></div> 
+                    <input type="submit" value="创建" class="super normal button" /> 
+                    </form> 
+                </div> 
+                <div class="inner"> 
+                    <span class="fade"><span class="chevron">‹&nbsp;</span>返回 <a href="$_URL/go/$ename">$node[name]</a></span> 
+                </div> 
+            </div> 
+        </div> 
+    <div class="c"></div> 
+    </div> 
+    </div> 
+     {template footer} 

@@ -1,0 +1,96 @@
+{template header}
+<!-- 主部开始 -->
+<div class="body_bg">
+<div class="container">
+    <div class="block">
+        <div class="construction_list">
+            <div class="left">
+              <div class="construction_list_main">
+              	<h6><span>推荐施工队</span></h6>
+                <!--{loop $recommend $list}-->
+                <div class="brief">
+                	<!--{if $list[if_recommend]=='1'}--><div class="tag_recommend"></div><!--{/if}-->
+                    <a href="$list[domain]"><img src="$list[profile_image_url]" width="200" height="150" /></a>
+                    <p class="name"><a href="$list[domain]">$list[screenname]</a>$config_identit[$list[identity]]<!--{if $list[verified]=='true'}--><span class="tag_ensure" title="平台担保"></span><!--{/if}--></p>
+                    <div class="last_item">
+                    	<div class="item_name">最近项目：<a href="$_URL/$list[domain]?app=case&act=view&id=$list[project][project_id]">$list[project][project_name]</a></font></div>
+                        <div class="type">$list[project][progress]</div>
+                    </div>
+                    <dl>
+                        <dt>粉丝：</dt><dd><a href="$list[domain]?app=follow&act=fans">$list[friends_count]</a></dd>
+                        <dt>项目：</dt><dd><a href="$list[domain]?app=case">$list[case_count]</a></dd>
+                        <dt>图片：</dt><dd><a href="$list[domain]?app=photo">$list[picture_count]</a></dd>
+                        <dt>动态：</dt><dd><a href="$list[domain]">$list[timeline_count]</a></dd>
+                    </dl>
+              	</div>
+              	<!--{/loop}-->
+                
+              </div>
+              <div class="blank15"></div>
+              <div class="construction_list_contnet">
+              	<h6><span>施工队列表</span></h6>
+                <!--{loop $constructionList $list}-->
+                <div class="brief_long">
+                	<div class="user_info">
+                    	<a href="$list[domain]"><img src="$list[profile_image_url]" height="105" width="140" /></a>
+                        <p class="name"><a href="$list[domain]">$list[screenname]</a>$config_identit[$list[identity]]<!--{if $list[verified]=='true'}--><span class="tag_ensure" title="平台认证"></span><!--{/if}--></p>
+                        <dl>
+                            <dt>粉丝：</dt><dd><a href="$list[domain]?app=follow&act=fans">$list[friends_count]</a></dd>
+                        	<dt>项目：</dt><dd><a href="$list[domain]?app=case">$list[case_count]</a></dd>
+                        	<dt>图片：</dt><dd><a href="$list[domain]?app=photo">$list[picture_count]</a></dd>
+                        	<dt>动态：</dt><dd><a href="$list[domain]">$list[timeline_count]</a></dd>
+                        </dl>                        
+                    </div>
+                    <div class="item_info">
+                    	<h4>$list[info]</h4>
+                  		<p>所在位置：<font>上海 $city[shanghai][$list[city_id]][city]</font></p>
+                        <p>最近项目：<font><a href="$_URL/$list[domain]?app=case&act=view&id=$list[project][project_id]">$list[project][project_name]</a></font></p>
+                        <div class="action">
+                        	<a href="" title="关注他" class="tag_follow"></a>
+                        	<a href="$_URL/$list[domain]?app=case" title="查看项目" class="tag_item"></a>
+                        </div>
+                    </div>
+                </div>
+                <!--{/loop}-->
+                
+                
+                
+                <div class="blank10"></div>
+                <!--pager start-->
+                <div class="pager">
+                  <ul>
+                    $pagehtml
+                  </ul>
+                </div>
+                <!--pager end-->
+              </div>
+            </div>
+            <div class="right">
+            	<dl class="choice">
+                	<dt class="search">
+                         <div class="right_search">
+                             <form name="" action="">
+                                 <input value="找施工人员" name="" class="input"/><input type="submit" class="submit" value="" />
+                             </form>
+                         </div>
+                     </dt>
+                	<dt>担保施工队</dt>
+                        <dd><a href="$_URL/construction/0/$where[identity]/0" <!--{if $where[verified]=='0'}-->class="selected" <!--{/if}-->>全部</a></dd>
+                        <dd><a href="$_URL/construction/true/$where[identity]/0" <!--{if $where[verified]=='true'}-->class="selected" <!--{/if}-->>平台认证</a></dd>
+                        <dd><a href="">在职施工队(公司)</a></dd>
+                        <dd><a href="">自由施工队</a></dd>
+                       <dt>施工工种</dt>
+                        <dd><a href="$_URL/construction/$where[verified]/0/0" <!--{if $where[identity]=='0'}-->class="selected" <!--{/if}-->>全部</a></dd>
+                        <dd><a href="$_URL/construction/$where[verified]/construction/0" <!--{if $where[identity]=='construction'}-->class="selected" <!--{/if}-->>施工队长</a></dd>
+                        <dd><a href="$_URL/construction/$where[verified]/shui_dian/0" <!--{if $where[identity]=='shui_dian'}-->class="selected" <!--{/if}-->>水电工</a></dd>
+                        <dd><a href="$_URL/construction/$where[verified]/ni_wa/0" <!--{if $where[identity]=='ni_wa'}-->class="selected" <!--{/if}-->>泥瓦工</a></dd>
+                        <dd><a href="$_URL/construction/$where[verified]/qi/0" <!--{if $where[identity]=='qi'}-->class="selected" <!--{/if}-->>油漆工</a></dd>
+                        <dd><a href="$_URL/construction/$where[verified]/mu/0" <!--{if $where[identity]=='mu'}-->class="selected" <!--{/if}-->>木工</a></dd>
+                </dl>
+            </div>
+            <div class="blank15"></div>
+        </div>
+    </div>
+</div>
+</div>
+{template footer}

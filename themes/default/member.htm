@@ -1,0 +1,135 @@
+{template header}
+    <div id="Wrapper"> 
+    <div id="Main"> 
+        <div id="Sidebar"> 
+            
+        </div> 
+        {template sidebar}
+        <div id="Content"> 
+            
+            <div class="box"><div class="inner"> 
+                <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
+                    <tr> 
+                        <td width="73" valign="top" align="center"><img src="$user_image" border="0" /> 
+                            
+                            <div class="sep10"></div> 
+                            <!--{if $usr_info[uid]!=$user_uid}-->
+                            <input type="button" value="屏蔽此人" class="super normal button" onclick="recordOutboundLink(this, 'Social Graph', 'block'); location.href = '/block/agR2MmV4cg4LEgZNZW1iZXIY59cCDA';" /> 
+                            <!--{/if}-->
+                            
+                            
+                        </td> 
+                        <td width="10" valign="top"></td> 
+                        <td width="auto" align="left" valign="top">
+                         <!--{if $usr_info[uid]!=$user_uid}-->
+                        <div class="fr"><div class="sep3"></div><a href="/follow/94" class="super special button" onClick="recordOutboundLink(this, 'Social Graph', 'follow');">加入特别关注</a></div>
+                         <!--{/if}-->
+                        <h2 style="padding: 0px; margin: 0px; font-size: 22px; line-height: 22px;">$usr_info[nickname]</h2> 
+                            <!--{if $usr_info[tagline]!=''}-->
+                            <div class="sep5"></div> 
+                            <span class="fade bigger">$usr_info[tagline]</span> 
+                            <!--{/if}-->
+                            <div class="sep5"></div> 
+                            <span class="snow">HNNU 第 $usr_info[uid] 号会员，加入于 $addtime</span> 
+                            <div class="sep10"></div> 
+                            <table cellpadding="2" cellspacing="0" border="0" width="100%"> 
+                                <tr> 
+                                    <td width="50%">
+                                    <!--{if $usr_info[weibo]!=''}--> 
+                                    <span style="line-height: 16px;"><img src="http://hnnu.me/usr/themes/default/images/weiboicon.png" align="absmiddle" /> &nbsp;<a href="http://t.qq.com/$usr_info[weibo]">@$usr_info[weibo]</a></span>
+                                    <!--{/if}--> 
+                                    
+                                    </td> 
+                                    <td width="50%"><span style="line-height: 16px;"><img src="http://hnnu.me/usr/themes/default/images/heart.png" align="absmiddle" /> &nbsp;$info[favfollowing] followers</span></td> 
+                                </tr> 
+                                <tr> 
+                                    <td width="50%"> 
+                                    <!--{if $user_info[website]!=''}-->
+                                    <span style="line-height: 16px;"><img src="http://v2ex.com/static/img/mobileme.png" align="absmiddle" /> &nbsp;<a href="http://linsk.cn" target="_blank" rel="nofollow external">$user_info[website]</a></span> 
+                                    <!--{/if}-->
+                                    </td>
+                                     <!--{if $user_info[location]!=''}--> 
+                                    <td width="50%">
+                                    <span style="line-height: 16px;"><img src="http://v2ex.com/static/img/location.png" align="absmiddle" /> &nbsp;$user_info[location]</span>
+                                    </td> 
+                                     <!--{/if}-->
+                                </tr> 
+                                <tr> 
+                                    <td width="50%"></td> 
+                                    <td width="50%"></td> 
+                                </tr> 
+                                <tr> 
+                                    <td width="50%"></td> 
+                                    <td width="50%"></td> 
+                                </tr> 
+                                
+                            </table> 
+                            
+                        </td> 
+                    </tr> 
+                </table> 
+                </div> 
+                
+            </div> 
+            <div class="sep20"></div> 
+            <div class="box"> 
+                <div class="cell"><span class="fade">最近创建主题</span></div> 
+                <div class="inner"> 
+                    <table cellpadding="5" cellspacing="0" border="0" width="100%" class="topics"> 
+                        <tr> 
+                            <th align="right" width="50">回复</td> 
+                            <th align="left" width="auto">标题</td> 
+                            <th align="left" width="200" colspan="2">最后回复时间</td> 
+                        </tr> 
+                        <!--{loop $topic_list $topic}-->
+                        <tr> 
+                        <!--{if $topic[reply_num]==0}-->
+                            <td align="right" width="50" class="even lend"><span class="snow">0</span></td>  
+                        <!--{else}-->
+                       		 <td align="right" width="50" class="odd lend"><strong><span class="green">$topic[reply_num]</span></strong></td>
+                        <!--{/if}--> 
+                            <td align="left" width="auto" class="odd"><a href="$_URL/t/$topic[tid]">$topic[title]</a></td> 
+                            <td align="left" width="80" class="odd"><a href="$_URL/$topic[lastreply]" class="dark">$topic[lastreply]</a></td> 
+                            <td align="left" width="110" class="odd rend"><small class="fade">$topic[lastreplytime]</small></td> 
+                        </tr> 
+                        <!--{/loop}-->
+                        
+                    </table> 
+                </div> 
+            </div> 
+            
+            <div class="sep20"></div> 
+            <div class="box"> 
+                <div class="cell"><span class="fade">最近参与主题</span></div> 
+                <div class="inner"> 
+                    <table cellpadding="5" cellspacing="0" border="0" width="100%" class="topics"> 
+                        <tr> 
+                            <th align="right" width="50">回复</td> 
+                            <th align="left" width="auto">标题</td> 
+                            <th align="left" width="200" colspan="2">最后回复时间</td> 
+                        </tr> 
+                        
+                      <!--{loop $reply_list $topic}-->
+                        <tr> 
+                        <!--{if $topic[reply_num]==0}-->
+                            <td align="right" width="50" class="even lend"><span class="snow">0</span></td>  
+                        <!--{else}-->
+                       		 <td align="right" width="50" class="odd lend"><strong><span class="green">$topic[reply_num]</span></strong></td>
+                        <!--{/if}--> 
+                            <td align="left" width="auto" class="odd"><a href="$_URL/t/$topic[tid]">$topic[title]</a></td> 
+                            <td align="left" width="80" class="odd"><a href="$_URL/$topic[lastreply]" class="dark">$topic[lastreply]</a></td> 
+                            <td align="left" width="110" class="odd rend"><small class="fade">$topic[lastreplytime]</small></td> 
+                        </tr> 
+                        <!--{/loop}-->
+                        
+                      
+                        
+                    </table> 
+                </div> 
+            </div> 
+            
+        </div> 
+    <div class="c"></div> 
+    </div> 
+    </div> 
+         {template footer} 

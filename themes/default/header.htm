@@ -1,0 +1,39 @@
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html lang="zh-CN"> 
+<head> 
+	<meta charset="UTF-8" /> 
+	<meta content="True" name="HandheldFriendly" /> 
+	<meta content="width=device-width; initial-scale=1.0; maximum-scale=1.0; user-scalable=0; name='viewport'" /> 
+	<title>HNNU{$webtitle}</title> 
+	<link rel="stylesheet" type="text/css" media="screen"  href="$_URL/$_CONFIG[style]/default.css" />
+	<script src="$_CONFIG[js]/jquery.min.js" type="text/javascript"></script>  
+	<link rel="shortcut icon" href="favicon.ico" /> 
+</head> 
+<body>
+    <div id="Top"><a href="#;" name="_top"></a> 
+    <div id="TopMain"> 
+        <a href="$_URL"><img src="$_URL/$_CONFIG[image]/logo.png" border="0" style="display: block; float: left; margin-top: 11px; margin-left: 20px;" /></a> 
+        <div id="Navigation"> 
+            
+            <ul> 
+                <!--{if $cookie_uid==''}-->
+                 <li><a href="$_URL" class="white">首页</a></li> 
+                <li><a href="$_URL/register" class="white">注册</a></li> 
+                <li><a href="$_URL/login" class="white">登入</a></li>
+                <!--{else}-->
+                <li><a href="$_URL" class="white">首页</a></li> 
+                <li><a href="$_URL/$cookie_name" class="white">$cookie_name</a></li>
+                 <li><a href="$_URL/qq" class="white"><img src="$_URL/$_CONFIG[image]/weiboicon.png" style="padding: 0px 3px 0px 3px;" border="0" alt="Twitter" /></a></li> 
+                <li><a href="$_URL/place/$myip" class="white">附近</a></li> 
+                <li><a href="$_URL/setting" class="white">设置</a></li> 
+                <li><a href="$_URL/setting#invit" class="white">邀请</a></li> 
+                <li><a href="$_URL/logout" class="white">登出</a></li> 
+                <!--{/if}-->
+            </ul> 
+            
+        </div> 
+    
+        <div id="Search"><form onsubmit="return dispatch()"><input type="text" class="search" maxlength="40" name="q" value="" id="q" /><input type="submit" class="super normal button" value="Search" style="-moz-border-radius: 0px 5px 5px 0px; border: none;" /></form></div> 
+    </div> 
+</div> 

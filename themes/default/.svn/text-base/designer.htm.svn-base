@@ -1,0 +1,106 @@
+{template header}
+<!-- 主部开始 -->
+<div class="body_bg">
+<div class="container">
+    <div class="block">
+        <div class="designer_list">
+            <div class="left">
+              <div class="designer_list_main">
+              	<h6><span>推荐设计师</span></h6>
+              	<!--{loop $recommend $list}-->
+                <div class="brief">
+                	<!--{if $list[if_recommend]=='1'}--><div class="tag_recommend"></div><!--{/if}-->
+                    <a href="$list[domain]"><img src="$list[profile_image_url]" width="200" height="150" /></a>
+                    <p class="name"><a href="$list[domain]">$list[screenname]</a><span class="tag_designer" title="设计师"></span><!--{if $list[verified]=='true'}--><span class="tag_ensure" title="平台认证"></span><!--{/if}--></p>
+                    <div class="last_item">
+                    	<div class="item_name">最近项目：<a href="$_URL/$list[domain]?app=case&act=view&id=$list[project][project_id]">$list[project][project_name]</a></font></div>
+                        <div class="type">$list[project][progress]</div>
+                    </div>
+                    <dl>
+                        <dt>粉丝：</dt><dd><a href="$list[domain]?app=follow&act=fans">$list[friends_count]</a></dd>
+                        <dt>项目：</dt><dd><a href="$list[domain]?app=case">$list[case_count]</a></dd>
+                        <dt>图片：</dt><dd><a href="$list[domain]?app=photo">$list[picture_count]</a></dd>
+                        <dt>动态：</dt><dd><a href="$list[domain]">$list[timeline_count]</a></dd>
+                    </dl>
+              	</div>
+              	<!--{/loop}-->
+              	 </div>
+              <div class="blank15"></div>
+              <div class="designer_list_contnet">
+              	<h6><span>设计师列表</span></h6>
+              	<!--{loop $designerList $list}-->
+                <div class="brief_long">
+                	<div class="user_info">
+                    	<a href="$list[domain]"><img src="$list[profile_image_url]" height="105" width="140" /></a>
+                        <p class="name"><a href="$list[domain]">$list[screenname]</a><span class="tag_designer" title="设计师"></span><!--{if $list[verified]=='true'}--><span class="tag_ensure" title="平台担保"></span><!--{/if}--></p>
+                        <dl>
+                            <dt>粉丝：</dt><dd><a href="$list[domain]?app=follow&act=fans">$list[friends_count]</a></dd>
+                        	<dt>项目：</dt><dd><a href="$list[domain]?app=case">$list[case_count]</a></dd>
+                        	<dt>图片：</dt><dd><a href="$list[domain]?app=photo">$list[picture_count]</a></dd>
+                        	<dt>动态：</dt><dd><a href="$list[domain]">$list[timeline_count]</a></dd>
+                        </dl>                        
+                    </div>
+                    <div class="item_info">
+                    	<h4>$list[info]</h4>
+                  		<p>所在位置：<font>上海 $city[shanghai][$list[city_id]][city]</font></p>
+                        <p>擅长风格：<font><!--{loop $list[style] $style}-->$style[style] <!--{/loop}--></font></p>
+                        <p>最近项目：<font><a href="$_URL/$list[domain]?app=case&act=view&id=$list[project][project_id]">$list[project][project_name]</a></font></p>
+                        <div class="action">
+                        	<a href="" title="关注他" class="tag_follow"></a>
+                        	<a href="$_URL/$list[domain]?app=case" title="查看项目" class="tag_item"></a>
+                        </div>
+                    </div>
+                </div>
+                <!--{/loop}-->
+                <div class="blank10"></div>
+                <!--pager start-->
+                <div class="pager">
+                  <ul>
+                    $pagehtml
+                  </ul>
+                </div>
+                <!--pager end-->
+              </div>
+            </div>
+            <div class="right">
+            	<dl class="choice">
+                	<dt>担保设计师</dt>
+                        <dd><a href="$_URL/designer/0/$where[city_id]/$where[status]/$where[order]/$where[style]/0" <!--{if $where[verified]=='0'}-->class="selected" <!--{/if}-->>全部</a></dd>
+                        <dd><a href="$_URL/designer/true/$where[city_id]/$where[status]/$where[order]/$where[style]/0" <!--{if $where[verified]=='true'}-->class="selected" <!--{/if}-->>平台认证</a></dd>
+                        <dd><a href="">在职设计师(公司)</a></dd>
+                        <dd><a href="">自由设计师</a></dd>
+                	<dt>排序筛选</dt>
+                        <dd><a href="$_URL/designer/$where[verified]/$where[city_id]/$where[status]/0/$where[style]/0" <!--{if $where[order]=='0'}-->class="selected" <!--{/if}-->>全部</a></dd>
+                        <dd><a href="$_URL/designer/$where[verified]/$where[city_id]/$where[status]/case_count/$where[style]/0" <!--{if $where[order]=='case_count'}-->class="selected" <!--{/if}-->>按项目数量</a></dd>
+                        <dd><a href="$_URL/designer/$where[verified]/$where[city_id]/$where[status]/picture_count/$where[style]/0" <!--{if $where[order]=='picture_count'}-->class="selected" <!--{/if}-->>按相片数量</a></dd>
+                        <dd><a href="$_URL/designer/$where[verified]/$where[city_id]/$where[status]/lastlogin/$where[style]/0" <!--{if $where[order]=='lastlogin'}-->class="selected" <!--{/if}-->>登录平台时间</a></dd>
+                        <dd><a href="$_URL/designer/$where[verified]/$where[city_id]/$where[status]/update_time/$where[style]/0" <!--{if $where[order]=='update_time'}-->class="selected" <!--{/if}-->>按照活跃程度</a></dd>
+                     <dt>设计师状态</dt>
+                        <dd><a href="$_URL/designer/$where[verified]/$where[city_id]/$where[status]/$where[order]/$where[style]/0" <!--{if $where[verified]=='0'}-->class="selected" <!--{/if}-->>全部</a></dd>
+                        <dd><a href="$_URL/designer/$where[verified]/$where[city_id]/$where[status]/$where[order]/$where[style]/1" <!--{if $where[verified]=='1'}-->class="selected" <!--{/if}-->>正有项目进行中</a></dd>
+                        <dd><a href="$_URL/designer/$where[verified]/$where[city_id]/$where[status]/$where[order]/$where[style]/2" <!--{if $where[verified]=='2'}-->class="selected" <!--{/if}-->>空闲中</a></dd>
+                     <dt>设计师位置</dt>
+                        <dd><a href="$_URL/designer/$where[verified]/0/$where[status]/$where[order]/$where[style]/0" <!--{if $where[city_id]=="0"}-->class="selected" <!--{/if}-->>全部</a></dd>
+                        <!--{loop $city[shanghai] $list}-->
+                        <dd><a href="$_URL/designer/$where[verified]/$list[cid]/$where[status]/$where[order]/$where[style]/0" <!--{if $where[city_id]==$list[cid]}-->class="selected" <!--{/if}-->>$list[city]</a></dd>
+                        <!--{/loop}-->
+                     <dt class="search">
+                         <div class="right_search">
+                             <form name="" action="">
+                                 <input value="找设计师" name="" class="input"/><input type="submit" class="submit" value="" />
+                             </form>
+                         </div>
+                     </dt>
+                     <dt>设计师擅长风格</dt>
+                     <dd><a href="$_URL/designer/$where[verified]/$where[city_id]/$where[status]/$where[order]/0/0" <!--{if $where[style]=='0'}-->class="selected" <!--{/if}-->>全部</a></dd>
+                     <!--{loop $styleList $list}-->
+                        <dd><a href="$_URL/designer/$where[verified]/$where[city_id]/$where[status]/$where[order]/$list[style_id]/0" <!--{if $where[style]==$list[style_id]}-->class="selected" <!--{/if}-->>$list[style]</a></dd>
+                     <!--{/loop}-->   
+                </dl>
+            </div>
+            <div class="blank15"></div>
+        </div>
+    </div>
+</div>
+</div>
+{template footer}

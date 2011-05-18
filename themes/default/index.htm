@@ -1,0 +1,163 @@
+{template header}
+    <div id="Wrapper"> 
+    <div id="Main"> 
+        <div id="Sidebar">    
+        </div> 
+        {template sidebar}
+        <div id="Content">
+    
+            <div class="box" id="topics_index">
+               <!--{if $cookie_uid==''}-->  
+             
+                <div class="cell" align="left"><div class="fr"><span class="fade" style="font-size: 110%;">学习 <span class="snow">&nbsp;•&nbsp;</span> 互动 <span class="snow">&nbsp;•&nbsp;</span> 交友 <span class="snow">&nbsp;•&nbsp;</span> 生活</span></div>
+    <span class="bigger">Welcome to <strong>HNNU</strong></span>
+    <div class="sep10"></div>
+       <!--<OBJECT             codeBase=http://download.macromedia.com/pub/shockwave/cabs/flash/swflash.cab#version=7,0,19,0             height=188 width=638             classid=clsid:D27CDB6E-AE6D-11cf-96B8-444553540000>				<PARAM NAME="movie" VALUE="http://www.hnnu.edu.cn/images/banner.swf"><PARAM NAME="quality" VALUE="high">                              <embed src="http://www.hnnu.edu.cn/images/banner.swf" quality="high"             pluginspage="http://www.macromedia.com/go/getflashplayer"             type="application/x-shockwave-flash" width="638"             height="188"></embed> 			<param name="wmode" value="transparent" /></OBJECT>-->
+ 
+    <table cellpadding="5" cellspacing="0" border="0" width="100%">
+    <tr>
+        <td width="33%" align="left" valign="top">
+            <table cellpadding="5" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td align="left" valign="top"><span class="snow"><img src="http://static.v2ex.com/mono/city.gif" align="left" style="margin: 0px 10px 10px 0px;" />系别 &nbsp;<a href="go/zhongwen">中文</a> • <a href="go/zhengfa">政法</a> • <a href="go/waiyu">外语</a> • <a href="go/jinji">经济管理</a> • <a href="go/meishu">美术</a> • <a href="go/shuxue">数学</a></span></td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top"><span class="snow"><img src="http://static.v2ex.com/mono/chat.gif" align="left" style="margin: 0px 10px 20px 0px;" />Share &nbsp;<a href="go/share">分享发现</a> • <a href="go/qna">问与答</a></span>
+                    </td>
+                </tr>
+               
+            </table>
+        </td>
+        <td width="34%" align="left" valign="top">
+            <table cellpadding="5" cellspacing="0" border="0" width="100%">
+            
+                <tr>
+                    <td align="left" valign="top"><span class="snow"><img src="http://static.v2ex.com/mono/cloud.gif" align="left" style="margin: 0px 10px 20px 0px;" /><a href="/go/babel">PB2</a> • <a href="/go/gae">GAE</a> • <a href="/go/aws">AWS</a> • <a href="/go/v2ex">V2EX</a><br /><a href="/go/programmer">程序员</a> • <a href="/go/designer">设计师</a> • <a href="/go/starter">创造者</a>
+                
+          
+                    </span>
+                    </td>
+                </tr>
+                  <tr>
+                    <td align="left" valign="top"><span class="snow"><img src="http://static.v2ex.com/mono/fair.gif" align="left" style="margin: 0px 10px 30px 0px;" />生活 &nbsp;<a href="go/exchange">物物交换</a> • <a href="go/all4all">跳蚤市场</a> • <a href="go/music">音乐</a> • <a href="go/movie">电影</a></span>
+                    </td>
+                </tr>
+            </table>
+        </td>
+        <td width="33%" align="left" valign="top">
+            <table cellpadding="5" cellspacing="0" border="0" width="100%">
+                <tr>
+                    <td align="left" valign="top"><span class="snow"><img src="http://static.v2ex.com/mono/play.gif" align="left" style="margin: 0px 10px 10px 0px;" /><a href="/go/games">电子游戏</a> • <a href="/go/igame">iGame</a> • <a href="/go/ps3">PS3</a> • <a href="/go/3ds">3DS</a> • <a href="/go/xbox360">Xbox 360</a> • <a href="/go/wii">Wii</a> • <a href="/go/bf3">BF3</a> • <a href="/go/sc2">SC2</a> • <a href="/go/gamedevstory">Game D Story</a></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left" valign="top"><span class="snow"><img src="http://static.v2ex.com/mono/random.gif" align="left" style="margin: 0px 10px 10px 0px;" /><a href="go/random">随想</a> • <a href="go/autistic">自言自语</a>
+                    <div class="sep5"></div>
+                    偶尔无聊一下是为了大部分时候不无聊
+                    </span>
+                    </td>
+                </tr>
+                
+            </table>
+        </td>
+    </tr>
+    </table>
+</div> 
+
+      <!--{/if}-->              
+                
+                
+                
+                
+<!--{loop $list $list}-->               
+<div class="cell from_$list[tid]"> 
+<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr> 
+	<td valign="top" class="avatar"><a href="$_URL/$list[nickname]"><img src="$list[user_image]" border="0" /></a></td> 
+	<td style="padding-left: 12px" valign="top"> 
+	    
+	        <div class="fr"> 
+	            
+	             <!--{if $list[reply_num]!=0}-->   <a href="$_URL/t/$list[tid]#reply$list[reply_num]" class="count_livid">$list[reply_num]</a> <!--{/if}-->
+	            
+	        </div> 
+	    
+	    <div class="sep3"></div> 
+		<span class="bigger" style="font-size: 16px; line-height: 130%;"><a href="$_URL/t/$list[tid]">$list[title]</a></span> 
+		<div class="sep5"></div> 
+        <span class="created"><strong><a href="$_URL/go/$list[ename]" class="node">$list[name]</a></strong>&nbsp;•&nbsp;<strong><a href="$_URL/$list[nickname]" class="dark">$list[nickname]</a></strong> &nbsp;•&nbsp; $list[strlen] 个字符 &nbsp;•&nbsp; $list[hit] 次点击 &nbsp;•&nbsp; $list[addtime] <!--{if $list[lastreply]!=''}-->replied by <a href="$_URL/$list[lastreply]" class="dark">$list[lastreply]</a><!--{/if}--></span> 
+	</td> 
+	</tr> 
+</table> 
+</div> 
+<!--{/loop}--> 
+
+ 
+                
+                               
+                <div class="inner"> 
+        		    <span class="chevron">»</span> <a href="$_URL/recent">更多新主题</a> 
+        		</div> 
+            </div> 
+            <div class="sep20"></div> 
+            <div class="box"> 
+                <div class="cell"><div class="fr"><a href="/planes">位面</a></div><span class="fade"><strong>HNNU</strong> / 节点导航</span></div> 
+                <div class="cell"><table cellpadding="0" cellspacing="0" border="0"><tr><td align="right" width="80">
+                <span class="fade">分享与探索</span></td><td style="line-height: 200%; padding-left: 15px;">
+                <a href="go/qna" style="font-size: 14px;">问与答</a>&nbsp; &nbsp; 
+                <a href="go/share" style="font-size: 14px;">分享发现</a>&nbsp; &nbsp; 
+                <a href="go/autistic" style="font-size: 14px;">自言自语</a>&nbsp; &nbsp; 
+                <a href="go/random" style="font-size: 14px;">随想</a>&nbsp; &nbsp;
+                <a href="go/create" style="font-size: 14px;">分享创造</a>&nbsp; &nbsp;
+                <a href="go/design" style="font-size: 14px;">设计</a>&nbsp; &nbsp; 
+                </td></tr></table></div><div class="cell"><table cellpadding="0" cellspacing="0" border="0"><tr><td align="right" width="80"><span class="fade">系别</span></td><td style="line-height: 200%; padding-left: 15px;">
+                <a href="go/zhongwen" style="font-size: 14px;">中文</a>&nbsp; &nbsp; 
+                <a href="go/zhengfa" style="font-size: 14px;">政法</a>&nbsp; &nbsp; 
+                <a href="go/waiyu" style="font-size: 14px;">外语</a>&nbsp; &nbsp; 
+                <a href="go/shuxue" style="font-size: 14px;">数学</a>&nbsp; &nbsp; 
+                <a href="go/wudian" style="font-size: 14px;">物电</a>&nbsp; &nbsp; 
+                <a href="go/huaxue" style="font-size: 14px;">化学与化工</a>&nbsp; &nbsp; 
+                <a href="go/jisuanji" style="font-size: 14px;">计算机与信息技术工程</a>&nbsp; &nbsp; 
+                <a href="go/jiaoyu" style="font-size: 14px;">教育科学</a>&nbsp; &nbsp; 
+                <a href="go/tiyu" style="font-size: 14px;">体育</a>&nbsp; &nbsp; 
+                <a href="go/jixu" style="font-size: 14px;">继续教育学院</a>&nbsp; &nbsp;                 
+                <a href="go/jingji" style="font-size: 14px;">经济管理</a>&nbsp; &nbsp; 
+                <a href="go/meishu" style="font-size: 14px;">美术</a>&nbsp; &nbsp; 
+                <a href="go/yinyue" style="font-size: 14px;">音乐</a>&nbsp; &nbsp; 
+                <a href="go/shengming" style="font-size: 14px;">生命科学</a>&nbsp; &nbsp; 
+                <a href="go/dianqi" style="font-size: 14px;">电气信息工程</a>&nbsp; &nbsp;
+      </td></tr></table></div>
+      <div class="cell"><table cellpadding="0" cellspacing="0" border="0"><tr><td align="right" width="80"><span class="fade">生活</span></td><td style="line-height: 200%; padding-left: 15px;">
+      <a href="go/schoollonely" style="font-size: 14px;">单身单草</a>&nbsp; &nbsp; 
+      <a href="go/afterdark" style="font-size: 14px;">天黑以后</a>&nbsp; &nbsp; 
+       <a href="go/video" style="font-size: 14px;">视频</a>&nbsp; &nbsp;
+      <a href="go/music" style="font-size: 14px;">音乐</a>&nbsp; &nbsp; 
+      <a href="go/movie" style="font-size: 14px;">电影</a>&nbsp; &nbsp; 
+      <a href="go/all4all" style="font-size: 14px;">跳蚤市场</a>&nbsp; &nbsp; 
+      <a href="go/reading" style="font-size: 14px;">阅读</a>&nbsp; &nbsp; 
+      <a href="go/photograph" style="font-size: 14px;">摄影</a>&nbsp; &nbsp; 
+      <a href="go/tv" style="font-size: 14px;">剧集</a>&nbsp; &nbsp; 
+      <a href="go/travel" style="font-size: 14px;">旅行</a>&nbsp; &nbsp; 
+      <a href="go/exchange" style="font-size: 14px;">物物交换</a>&nbsp; &nbsp; 
+      <a href="go/diary" style="font-size: 14px;">日记</a>&nbsp; &nbsp; 
+      <a href="go/tiyu" style="font-size: 14px;">体育</a>&nbsp; &nbsp;
+      <a href="go/chat" style="font-size: 14px;">闲聊</a>&nbsp; &nbsp;
+     </td></tr></table></div><div class="cell"><table cellpadding="0" cellspacing="0" border="0"><tr><td align="right" width="80"><span class="fade">学习</span></td><td style="line-height: 200%; padding-left: 15px;">
+     <a href="go/english" style="font-size: 14px;">英语</a>&nbsp; &nbsp; 
+     <a href="go/kaoyan" style="font-size: 14px;">考研</a>&nbsp; &nbsp; 
+     <a href="go/web" style="font-size: 14px;">网站开发</a>&nbsp; &nbsp; 
+     <a href="go/study" style="font-size: 14px;">学习经验</a>&nbsp; &nbsp; 
+          </td></tr></table></div>
+     <div class="cell"><table cellpadding="0" cellspacing="0" border="0"><tr><td align="right" width="80"><span class="fade">电子游戏</span></td><td style="line-height: 200%; padding-left: 15px;">
+     <a href="go/games" style="font-size: 14px;">电子游戏</a>&nbsp; &nbsp; 
+     <a href="go/cf" style="font-size: 14px;">穿越火线</a>&nbsp; &nbsp; 
+     <a href="go/webgame" style="font-size: 14px;">网络游戏</a>&nbsp; &nbsp; 
+     <a href="go/wii" style="font-size: 14px;">Wii</a>&nbsp; &nbsp; 
+     <a href="go/psp" style="font-size: 14px;">PSP</a>&nbsp; &nbsp; 
+
+     </td></tr></table></div> 
+            </div> 
+        </div> 
+    <div class="c"></div> 
+    </div> 
+    </div> 
+     {template footer} 

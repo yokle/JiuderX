@@ -1,0 +1,79 @@
+{template header}
+    <div id="Wrapper"> 
+    <div id="Main"> 
+        <div id="Sidebar">   
+        </div> 
+     {template sidebar}
+        <div id="Content"> 
+            <div class="box"> 
+                <div class="cell"><div class="fr"><strong><span class="snow bigger" id="tc">140</span></strong></div> 
+                    <strong><span class="fade bigger"><img src="$_URL/$_CONFIG[image]/weiboicon.png" /> &nbsp;
+                    <!--{if $act==''}-->
+                     我的主页 &nbsp;
+                     <!--{else}-->
+                     <a href="$_URL/qq">我的主页</a> &nbsp;
+                     <!--{/if}-->
+                     <!--{if $act=='mentions'}-->
+                     提到我的 &nbsp;
+                     <!--{else}-->
+                     <a href="$_URL/qq/mentions">提到我的</a> &nbsp;
+                     <!--{/if}-->
+                     <!--{if $act=='inbox'}-->
+                    私信
+                     <!--{else}-->
+                     <a href="$_URL/qq/inbox">私信</a>
+                     <!--{/if}-->
+                     </span></strong> 
+                    <div class="sep10"></div> 
+                    <script type="text/javascript"> 
+    var updateCount = function() {
+        s = document.getElementById("s");
+        r = 140 - s.value.length;
+        tc = document.getElementById("tc");
+        tc.innerHTML = r;
+    }
+</script> 
+<form method="post" action=""> 
+<textarea class="mll short" name="status" maxlength="140" id="s" onkeyup="updateCount();"></textarea> 
+<div class="sep10"></div> 
+<div class="fr"><input type="submit" value="广播" class="super normal button" /></div> 
+ 
+<small class="fade">Now tweeting from @<strong><a href="$_URL/qq/user/$info[qq_name]" class="dark">$info[qq_name]</a></strong> 
+<div class="sep3"></div> 
+</small> 
+ 
+</form> 
+<script type="text/javascript"> 
+    var focusStatus = function() {
+        s = document.getElementById("s");
+        s.focus();
+    }
+    
+    setTimeout("focusStatus()", 200);
+</script> 
+                </div> 
+                <!--{loop $tweet[data][info] $list}-->
+                <div class="cell"> 
+                    <table cellpadding="0" cellspacing="0" border="0" width="100%"><tr> 
+                    	<td valign="top" class="avatar"><a href="$_URL/qq/user/$list[name]"><img src="{$list[head]}/50" align="absmiddle" border="0" class="avatar_normal" /></a></td> 
+                    	<td style="padding-left: 12px" valign="top"> 
+                    	    <div class="fr"> 
+                    	        <strong class="snow"><small> <!--{eval echo maketime($list[timestamp],countdown);}--> via <a class="dark" href="#" rel="nofollow">$list[from]</a></small></strong> 
+                    	    </div> 
+                    	    <div class="sep3"></div> 
+                    	    <strong>$list[nick]</strong> @<a href="$_URL/qq/user/$list[name]" class="dark">$list[name]</a> 
+                    	    <div class="sep3"></div> 
+                    	    <div class="status">$list[text] <!--{if $list[source][text]!=''}-->转播 <a href="$_URL/qq/user/$list[source][name]">$list[source][nick]</a> $list[source][text]<!--{/if}--></div> 
+                    	</td> 
+                    	</tr> 
+                    </table> 
+                </div> 
+                <!--{/loop}-->
+               
+                
+            </div> 
+        </div> 
+    <div class="c"></div> 
+    </div> 
+    </div> 
+    {template footer} 

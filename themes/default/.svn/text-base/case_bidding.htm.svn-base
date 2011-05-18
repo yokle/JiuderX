@@ -1,0 +1,83 @@
+{template header}
+<!-- 主部开始 -->
+<div class="container">
+    <div class="block">
+        <div class="item_information">
+            <div class="left">
+              <h6><span>项目详细</span><a href="">返回</a></h6>
+              <div class="now_notice_error">该项目正在紧急招标中<a href="">我要竞标</a></div>
+                <div class="item_information_new">
+                	<h6><span>项目概况</span></h6>
+                    <ul>
+                        <li><span>项目名称：</span>$projectinfo[project_name]</li>
+                        <li><span>建筑面积：</span>$projectinfo[area] 平方米</li>
+                        <li><span>工程款：</span>$projectinfo[computation] 人民币</li>
+                        <li><span>期待风格：</span>$projectinfo[style]</li>
+                        <li><span>房型：</span>$projectinfo[chamber]</li>
+                        <li><span>房型图：</span><img src="$projectinfo[chamber_image_url]" width="80"></li>
+                        <li><span>项目地址：</span>$projectinfo[project_address]</li>
+                    </ul>
+                    <h6><span>业主信息</span></h6>
+                    <ul>
+                        <li><span>业主真实姓名：</span>$projectinfo[realname]</li>
+                        <li><span>业主电话：</span>$telephone</li>
+                        <li><span>业主email：</span>$email</li>
+                        <li><span>业主手机：</span>$mobliephone</li>
+                    </ul>
+                </div>
+              	<div class="item_blog_list">
+                    <h6><span>日记</span></h6>
+                    <div class="now_notice">暂无日记</div>
+                </div>
+                <div class="blank15"></div>
+                <div class="item_album_list photo_category">
+                    <h6><span>图库</span></h6>
+                    <div class="now_notice">暂无图库</div>
+                </div>
+              </div>
+            <div class="right">
+            	<div class="item_information_post">
+                    <a href="javascript:;" class="item_new_item_open">
+                        <h3>我要竞标</h3>
+                        <h4>设计师可以自由竞标</h4>
+                    </a>
+                </div>
+            	<div class="index_right_box">
+                	<h5><span>附近开工项目</span><font><a href="" class="tag_down" title="上一页"></a><a href="" class="tag_up" title="下一页"></a></font></h5>
+                    <div class="content">
+                    	<ul>
+                        	<li class="first">
+                            	<a href="" class="img"><img src="photo/item.jpg" height="75" width="75" /></a>
+                                <span>
+                                	<p>设计：<a href="">有钱人李峰</a></p>
+                                	<p>施工：<a href="">有钱人李峰</a></p>
+                                	<p>业主：<a href="">有钱人李峰</a></p>
+                                	<p>监理：<a href="">有钱人李峰</a></p>
+                                </span>
+                                <p><font class="tag_ensure"></font><a href="">一套三室2听的房子222一套三室2听的房子222一套三室2听的房子222一套三室2听的房子222</a></p>
+                            </li>
+                        	<li><img src="photo/photo_small.png" /><span><font class="tag_ensure"></font><a href="">对多元事物或事物现象在空间上并置的行为，具有较弱的排他性</a></span></li>
+                        	<li><img src="photo/photo_small.png" /><span><font class="tag_ensure"></font><a href="">对多元事物或事物现象在空间上并置的行为，具有较弱的排他性</a></span></li>
+                        	<li><img src="photo/photo_small.png" /><span><font class="tag_ensure"></font><a href="">对多元事物或事物现象在空间上并置的行为，具有较弱的排他性</a></span></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="index_right_box">
+                	<h5><span>近期招标业主</span><font><a href="" class="tag_down" title="上一页"></a><a href="" class="tag_up" title="下一页"></a></font></h5>
+                    <div class="content">
+                    	<ul>
+                        	<!--{loop $bidding_list $bidding_list}-->
+                        	<li><strong class="index_bids">$bidding_list[computation]位数</strong><span><font class="tag_ensure"></font><a href="case/$bidding_list[project_id]">$bidding_list[project_name]</a>&nbsp;($bidding_list[addtime])</span></li>
+                        <!--{/loop}-->
+
+                        </ul>
+                    </div>
+                </div>
+            	
+            </div>
+            <div class="blank15"></div>
+        </div>
+    </div>
+</div>
+{template footer}

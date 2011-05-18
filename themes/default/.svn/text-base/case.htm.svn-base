@@ -1,0 +1,97 @@
+{template header}
+<!-- 主部开始 -->
+<div class="body_bg">
+<div class="container">
+    <div class="block">
+        <div class="item_list">
+            <div class="left">
+              <div class="item_list_main">
+              	<h6><span>最近更新项目</span></h6>
+              	<!--{loop $new_project $new_project}-->
+                <div class="brief">
+       
+                    <a href="$_URL/case/view/$new_project[project_id]"><img src="$new_project[case_image]" width="200" height="150" /></a>
+                    <div class="last_item">
+                    	<div class="item_name"><a href="$_URL/case/view/$new_project[project_id]">$new_project[project_name]</a><!--{if $new_project[isensure]=='true'}--><span class="tag_authority" title="平台监理"></span><!--{/if}--></div>
+                        <div class="type">$new_project[progress]</div>
+                    </div>
+                    <p class="name">设计师：<a href="$_URL/$new_project[domain]">$new_project[screenname]</a><span class="tag_designer" title="设计师"></span><!--{if $new_project[verified]=='true'}--><span class="tag_ensure" title="平台认证"></span><!--{/if}--></p>
+              	</div>
+              	<!--{/loop}-->
+                
+              </div>
+              <div class="blank15"></div>
+              <div class="item_list_contnet">
+              	<h6><span>项目列表</span></h6>
+              	<!--{loop $list $list}-->
+                <div class="brief">
+                    <a href="$_URL/case/view/$list[project_id]"><img src="$list[case_image]" width="200" height="150" /></a>
+                    <div class="last_item">
+                    	<div class="item_name"><a href="$_URL/case/view/$list[project_id]">$list[project_name]</a><!--{if $list[isensure]=='true'}--><span class="tag_authority" title="平台监理"></span><!--{/if}--></div>
+                        <div class="type"><!--{if $list[progress]==''}-->招标进行中<!--{else}-->$list[progress]<!--{/if}--></div>
+                    </div>
+                    <!--{if $list[progress]!=''}-->
+                    <p class="name">设计师：<a href="$_URL/$list[domain]">$list[screenname]</a><span class="tag_designer" title="设计师"></span><!--{if $list[verified]=='true'}--><span class="tag_ensure" title="平台认证"></span><!--{/if}--></p>
+                    <!--{/if}-->
+              	</div>
+              	<!--{/loop}-->
+                
+                <div class="blank10"></div>
+                <!--pager start-->
+                <div class="pager">
+                  <ul>
+                   $pagehtml
+                  </ul>
+                </div>
+                <!--pager end-->
+              </div>
+            </div>
+            <div class="right">
+            	<dl class="choice">
+            	   <dt>招标状态</dt>
+                        <dd><a href="$_URL/case/0/$where[isensure]/$where[order]/$where[project_progress]/$where[chamber_id]/$where[style_id]/0" <!--{if $where[project_status]=='0'}-->class="selected" <!--{/if}-->>全部</a></dd>
+                        <dd><a href="$_URL/case/bidding/$where[isensure]/$where[order]/$where[project_progress]/$where[chamber_id]/$where[style_id]/0" <!--{if $where[project_status]=='bidding'}-->class="selected" <!--{/if}-->>招标中</a></dd>
+                        <dd><a href="$_URL/case/bidded/$where[isensure]/$where[order]/$where[project_progress]/$where[chamber_id]/$where[style_id]/0" <!--{if $where[project_status]=='bidded'}-->class="selected" <!--{/if}-->>完成招标</a></dd>
+                	<dt>监理项目</dt>
+                        <dd><a href="$_URL/case/$where[project_status]/0/$where[order]/$where[project_progress]/$where[chamber_id]/$where[style_id]/0" <!--{if $where[isensure]=='0'}-->class="selected" <!--{/if}-->>全部</a></dd>
+                        <dd><a href="$_URL/case/$where[project_status]/true/$where[order]/$where[project_progress]/$where[chamber_id]/$where[style_id]/0" <!--{if $where[isensure]=='true'}-->class="selected" <!--{/if}-->>平台监理</a></dd>
+                        <dd><a href="$_URL/case/$where[project_status]/false/$where[order]/$where[project_progress]/$where[chamber_id]/$where[style_id]/0" <!--{if $where[isensure]=='false'}-->class="selected" <!--{/if}-->>无平台监理</a></dd>
+                	<dt>排序筛选</dt>
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/0/$where[project_progress]/$where[chamber_id]/$where[style_id]/0" <!--{if $where[order]=='0'}-->class="selected" <!--{/if}-->>全部</a></dd>
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/lastupdate/$where[project_progress]/$where[chamber_id]/$where[style_id]/0" <!--{if $where[order]=='lastupdate'}-->class="selected" <!--{/if}-->>按照最近更新</a></dd>
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/addtime/$where[project_progress]/$where[chamber_id]/$where[style_id]/0" <!--{if $where[order]=='addtime'}-->class="selected" <!--{/if}-->>按照添加时间</a></dd>
+                     <dt>施工进度</dt>
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/$where[order]/0/$where[chamber_id]/$where[style_id]/0" <!--{if $where[project_progress]=='0'}-->class="selected" <!--{/if}-->>全部</a></dd>
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/$where[order]/1/$where[chamber_id]/$where[style_id]/0" <!--{if $where[project_progress]=='1'}-->class="selected" <!--{/if}-->>装修准备中</a></dd>
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/$where[order]/2/$where[chamber_id]/$where[style_id]/0" <!--{if $where[project_progress]=='2'}-->class="selected" <!--{/if}-->>拆改 水电工程</a></dd>
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/$where[order]/3/$where[chamber_id]/$where[style_id]/0" <!--{if $where[project_progress]=='3'}-->class="selected" <!--{/if}-->>泥瓦工程</a></dd>
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/$where[order]/4/$where[chamber_id]/$where[style_id]/0" <!--{if $where[project_progress]=='4'}-->class="selected" <!--{/if}-->>木工工程</a></dd>
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/$where[order]/5/$where[chamber_id]/$where[style_id]/0" <!--{if $where[project_progress]=='5'}-->class="selected" <!--{/if}-->>油漆工程</a></dd>
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/$where[order]/6/$where[chamber_id]/$where[style_id]/0" <!--{if $where[project_progress]=='6'}-->class="selected" <!--{/if}-->>安装 收尾工程</a></dd>
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/$where[order]/7/$where[chamber_id]/$where[style_id]/0" <!--{if $where[project_progress]=='7'}-->class="selected" <!--{/if}-->>软装进行中</a></dd>
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/$where[order]/8/$where[chamber_id]/$where[style_id]/0" <!--{if $where[project_progress]=='8'}-->class="selected" <!--{/if}-->>完工 入住</a></dd>
+                     <dt class="search">
+                         <div class="right_search">
+                             <form name="" action="">
+                                 <input value="找项目" name="" class="input"/><input type="submit" class="submit" value="" />
+                             </form>
+                         </div>
+                     </dt>
+                      <dt>房型</dt>
+                         <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/$where[order]/$where[project_progress]/0/$where[style_id]/0" <!--{if $where[chamber_id]=='0'}-->class="selected" <!--{/if}-->>全部</a></dd>
+                     <!--{loop $chamberList $list}-->
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/$where[order]/$where[project_progress]/$list[chamber_id]/$where[style_id]/0" <!--{if $where[chamber_id]==$list[chamber_id]}-->class="selected" <!--{/if}-->>$list[chamber]</a></dd>
+                     <!--{/loop}-->  
+                     <dt>装修风格</dt>
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/$where[order]/$where[project_progress]/$where[chamber_id]/0/0" <!--{if $where[style_id]=='0'}-->class="selected" <!--{/if}-->>全部</a></dd>
+                     <!--{loop $styleList $list}-->
+                        <dd><a href="$_URL/case/$where[project_status]/$where[isensure]/$where[order]/$where[project_progress]/$where[chamber_id]/$list[style_id]/0" <!--{if $where[style_id]==$list[style_id]}-->class="selected" <!--{/if}-->>$list[style]</a></dd>
+                     <!--{/loop}-->  
+                </dl>
+            </div>
+            <div class="blank15"></div>
+        </div>
+    </div>
+</div>
+</div>
+{template footer}

@@ -1,0 +1,89 @@
+{template header}
+    <div id="Wrapper"> 
+    <div id="Main"> 
+        <div id="Sidebar">    
+        </div> 
+{template sidebar}
+        <div id="Content"> 
+            <div class="box"> 
+                <div class="cell" style="padding-bottom: 0px;"><table cellpadding="0" cellspacing="0" border="0" width="100%"> 
+                <tr> 
+                    
+                    <td width="auto" valign="top"><div class="fr" align="right"><span class="snow">主题总数</span> <span class="fade"><strong>{$row}</strong> &nbsp;<!--{if $cookie_uid!=''}--><span class="snow">•</span>&nbsp; <!--{if $isfav==''}--><a href="$_URL/favorite/node/$ename">加入收藏</a><!--{else}--><a href="$_URL/unfavorite/node/$ename">取消收藏</a><!--{/if}--></span><!--{/if}--></div> 
+                    <span class="bigger"><a href="$_URL">HNNU</a> <span class="chevron">&nbsp;›&nbsp;</span> $node[name]</span> 
+                    
+                    
+                    <div class="sep10"></div> 
+                    <div class="sep10"></div> 
+                    <div align="left"><!--{if $cookie_uid!=''}--> <!--{if $ename=='secretlove'}--><a href="$_URL/secretlove" class="super normal button">我暗恋Ta</a><!--{else}--><a href="$_URL/new/$ename" class="super normal button">创建新主题</a><!--{/if}--><!--{/if}--></div> 
+                    <div class="sep5"></div> 
+                    <div class="sep10"></div> 
+                    <div>
+                    <!--{if $ename=='secretlove'}--><div><img src="$_URL/$_CONFIG[image]/slovebg.jpg"></div> <!--{/if}-->
+                        <div style="padding: 3px 10px 5px 10px; display: inline-block; border-bottom: 5px solid #3c3; margin: 0px 2px 0px 2px;">所有讨论</div> 
+                    </div> 
+                    
+                    </td> 
+                </tr> 
+                </table> 
+                </div> 
+<!--{loop $list $list}-->               
+<div class="cell from_$list[tid]"> 
+<table cellpadding="0" cellspacing="0" border="0" width="100%"><tr> 
+	<td valign="top" class="avatar"><a href="$_URL/$list[nickname]"><img src="$list[user_image]" border="0" /></a></td> 
+	<td style="padding-left: 12px" valign="top"> 
+	    
+	        <div class="fr"> 
+	            
+	             <!--{if $list[reply_num]!=0}-->   <a href="$_URL_/t/$list[tid]#reply$list[reply_num]" class="count_livid">$list[reply_num]</a> <!--{/if}-->
+	            
+	        </div> 
+	    
+	    <div class="sep3"></div> 
+		<span class="bigger" style="font-size: 16px; line-height: 130%;"><a href="$_URL/t/$list[tid]">$list[title]</a></span> 
+		<div class="sep5"></div> 
+        <span class="created"><strong><a href="$_URL/$list[nickname]" class="dark">$list[nickname]</a></strong> &nbsp;•&nbsp; $list[strlen] 个字符 &nbsp;•&nbsp; $list[hit] 次点击 &nbsp;•&nbsp; $list[addtime] <!--{if $list[lastreply]!=''}-->replied by <a href="$_URL/$list[lastreply]" class="dark">$list[lastreply]</a><!--{/if}--></span> 
+	</td> 
+	</tr> 
+</table> 
+</div> 
+<!--{/loop}-->
+
+ 
+
+ 
+                <div class="inner"> 
+                    
+                        <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
+            			$pagehtml
+                               
+                        </table> 
+                    
+                    
+                        
+                        <div class="sep10"></div> 
+                        
+                        <span class="footer" style="display:none"> 学生 xxx人 </span> 
+                    
+                </div> 
+            </div> 
+            <!--{if $cookie_uid!=''}--> 
+            <div class="sep20"></div> 
+            <div class="box"> 
+                <div class="inner"> 
+                    <form action="$_URL/new/$ename" method="post"> 
+                    <input type="text" name="title" value="" class="sll" /> 
+                    <div class="sep10"></div> 
+                    <textarea name="content" class="mll"></textarea> 
+                    <div class="sep10"></div> 
+                    <input type="submit" value="创建" class="super normal button" /> 
+                    </form> 
+                </div> 
+            </div> 
+            
+        </div>
+        <!--{/if}--> 
+    <div class="c"></div> 
+    </div> 
+    </div> 
+  {template footer} 

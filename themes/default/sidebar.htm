@@ -1,0 +1,141 @@
+<div id="Rightbar"> 
+<!--{if $cookie_uid==''}-->
+       <div class="box"> 
+    
+    <div class="cell"> 
+        <strong>HNNU = Huainan Normal University</strong> 
+        
+        <div class="sep5"></div> 
+        <span class="fade">HNNU 是一个关于学习和生活的地方</span> 
+        
+    </div> 
+    <div class="inner"> 
+        <div class="sep5"></div> 
+        <div align="center"><a href="$_URL/register" class="super normal button">现在注册</a> 
+        <div class="sep5"></div> 
+        <div class="sep10"></div> 
+        已注册用户请 <a href="$_URL/login">登入</a></div> 
+    </div> 
+    
+</div> 
+<!--{else}-->
+            <div class="box"> 
+    
+    <div class="cell"> 
+        <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
+            <tr> 
+                <td width="48" valign="top"><a href="$_URL/$info[nickname]"><img src="$avatar_normal" border="0" /></a></td> 
+                <td width="10" valign="top"></td> 
+                <td width="auto" align="left"><span class="bigger"><a href="$_URL/$info[nickname]">$info[nickname]</a></span> 
+                    <div class="sep5"></div> 
+                    <span class="fade">$info[tagline]</span> 
+                </td> 
+            </tr> 
+        </table> 
+        <div class="sep10"></div> 
+        <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
+            <tr> 
+                <td width="33%" align="center"><a href="$_URL/my/nodes" class="dark" style="display: block;"><span class="bigger">$info[favnodes]</span><div class="sep3"></div><span class="fade">节点收藏</span></a></td> 
+                <td width="34%" style="border-left: 1px solid rgba(100, 100, 100, 0.4); border-right: 1px solid rgba(100, 100, 100, 0.4);" align="center"><a href="$_URL/my/topics" class="dark" style="display: block;"><span class="bigger">$info[favtopics]</span><div class="sep3"></div><span class="fade">主题收藏</span></a></td> 
+                <td width="33%" align="center"><a href="$_URL/my/following" class="dark" style="display: block;"><span class="bigger">$info[favfollowing]</span><div class="sep3"></div><span class="fade">特别关注</span></a></td> 
+            </tr> 
+        </table> 
+    </div> 
+    <div class="inner"><a href="/notifications" class="fade">0 条未读提醒</a></div> 
+    <div class="inner">
+    <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
+            <tr> 
+                <td  align="center"><img src="$_URL/$_CONFIG[image]/orignal/1-0.gif"></td> 
+                <td  align="center"><img src="$_URL/$_CONFIG[image]/orignal/2-0.gif"></td> 
+                <td  align="center"><img src="$_URL/$_CONFIG[image]/orignal/3-0.gif"></td>
+                <td  align="center"><img src="$_URL/$_CONFIG[image]/orignal/4-0.gif"></td> 
+                <td  align="center"><img src="$_URL/$_CONFIG[image]/orignal/5-0.gif"></td> 
+                <td  align="center"><img src="$_URL/$_CONFIG[image]/orignal/6-0.gif"></td>  
+            </tr> 
+        </table> 
+    </div> 
+    <!--{if $info[user_image]==''}-->
+    <div class="yellow"> 
+        <span class="fade">你还没有上传头像 <a href="$_URL/setting/avatar">现在就上传</a></span> 
+    </div> 
+    <!--{/if}-->
+    
+</div>
+<!--{/if}--> 
+<!--{if $m=='index'}-->
+
+            <div class="sep20"></div> 
+            <div class="box"><div class="cell"><span class="fade">最热节点</span></div><div class="inner" align="left">
+            <!--{loop $node $node}-->
+            <a href="$_URL/go/$node[ename]" class="item_node">$node[name]</a>
+            <!--{/loop}-->
+            </div></div> 
+            <div class="sep20"></div> 
+            <div class="box"> 
+    <div class="cell"><div class="fr"><a href="$_URL/changes">全站最新更改记录</a></div> 
+        <span class="fade">最近新增节点</span> 
+    </div> 
+    <div class="inner">
+    <!--{loop $new_node $node}-->
+            <a href="$_URL/go/$node[ename]" class="item_node">$node[name]</a>
+            <!--{/loop}-->
+
+    </div> 
+</div> 
+            <div class="sep20"></div> 
+            <div class="box"> 
+    <div class="cell"> 
+        <span class="fade">社区运行状态</span> 
+    </div> 
+    <div class="cell"> 
+        <table cellpadding="3" cellspacing="0" border="0" width="100%"> 
+            <tr> 
+                <td align="right" width="40%"><span class="fade">注册会员总数</span></td> 
+                <td align="left"><strong>$member[total]</strong></td> 
+            </tr> 
+            <tr> 
+                <td align="right" width="40%"><span class="fade">主题总数</span></td> 
+                <td align="left"><strong>$topic[total]</strong></td> 
+            </tr> 
+            <tr> 
+                <td align="right" width="40%"><span class="fade">回复总数</span></td> 
+                <td align="left"><strong>$reply[total]</strong></td> 
+            </tr> 
+        </table> 
+    </div>
+
+    <div class="inner"> 
+        <img src="$_CONFIG[image]/rss.png" align="absmiddle" /> <a href="/index.xml" target="_blank" class="dark">RSS 订阅社区最新更新</a> 
+    </div> 
+</div> 
+    <!--{/if}-->
+ <!--{if $cookie_uid!=''}-->             
+<div class="sep20"></div> 
+<div class="box"> 
+    <div class="cell"> 
+        <span class="fade">最近访问节点</span> 
+    </div> 
+    <div class="inner"> 
+        <!--{loop $zuji $zuji}-->
+            <span class="chevron">&nbsp;›&nbsp;</span> <a href="$_URL/go/$zuji[ename]">$zuji[name]</a> 
+            <div class="sep3"></div> 
+	   <!--{/loop}-->
+        
+    </div> 
+</div> 
+<!--{/if}--> 
+          <!--  <div class="sep20"></div> 
+            <div class="box" style="dipaly:">
+            <div class="inner"><script type="text/javascript"><!--
+google_ad_client = "ca-pub-2730627058254653";
+google_ad_slot = "1686681341";
+google_ad_width = 250;
+google_ad_height = 250;
+
+</script>
+<script type="text/javascript"
+src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+</script> </div></div> 
+            <div class="sep20"></div> -->
+            
+        </div> 

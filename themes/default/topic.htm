@@ -1,0 +1,121 @@
+{template header}
+<script type="text/javascript"> 
+	// reply a reply
+	function replyOne(username){
+	    replyContent = $("#reply_content");
+		oldContent = replyContent.val();
+		prefix = "@" + username + " ";
+		newContent = ''
+		if(oldContent.length > 0){
+		    if (oldContent != prefix) {
+		        newContent = prefix + oldContent;
+		    }
+		} else {
+		    newContent = prefix
+		}
+		replyContent.focus();
+		replyContent.val(newContent);
+	}
+</script> 
+
+    <div id="Wrapper"> 
+    <div id="Main"> 
+        <div id="Sidebar"> 
+        </div> 
+       {template sidebar}
+        <div id="Content"> 
+            <div class="box"> 
+                <div class="cell" style="min-height: 73px;"> 
+                    <div class="fr snow" style="padding-left: 10px; padding-bottom: 10px;"><a href="$_URL/$topic[nickname]"><img src="$topic[user_image]" border="0" /></a></div> 
+                    <span class="bigger"><a href="$_URL">HNNU</a> <span class="chevron">&nbsp;›&nbsp;</span> <a href="$_URL/go/$topic[ename]">$topic[name]</a></span> 
+                    <h1>$topic[title]</h1> 
+                    <small class="fade">By <a href="$_URL/$topic[nickname]" class="dark">$topic[nickname]</a> at $topic[addtime], $topic[hit] hits</small> 
+                </div> 
+                <div class="inner"> 
+                    <div class="content topic_content">$topic[content]</div> 
+                </div> 
+                <div class="inner"><div class="fr" align="right"><!--{if $topic[fav_num]>0}--><span style="font-size: 10px; line-height: 10px; color: #99a;">已有 $topic[fav_num] 人收藏此主题 &nbsp; </span><!--{/if}--><!--{if $isfav}--><a href="$_URL/unfavorite/topic/$tid" class="op">取消收藏</a><!--{else}--><a href="$_URL/favorite/topic/$tid" class="op">加入收藏</a><!--{/if}--></div> &nbsp; </div> 
+                
+            </div> 
+            
+            <div class="sep20"></div>
+            <!--{if $topic[reply_num]==0}-->
+            <div class="glass" align="center"><div class="inner"><span class="white">目前尚无回复</span></div></div>
+            <div class="sep20"></div>
+            <!--{else}-->  
+            <div class="box"> 
+                <div class="cell"><div class="fr"> </div><span class="fade">$topic[reply_num] 回复 &nbsp;<span class="snow">|</span>&nbsp; 直到 $topic[lastreplytime]</span></div> 
+                <div id="replies"> 
+                
+ 	<!--{eval $i=1}-->
+    <!--{loop $list $list}-->
+    <div class="cell reply from_$list[rid]"> 
+    
+ 
+    <table cellpadding="0" cellspacing="0" border="0" width="100%"> 
+        <tr> 
+            <td width="48" valign="top"><a href="$_URL/$list[nickname]"><img src="$list[user_image]" border="0" /></a></td> 
+            <td width="10"></td> 
+            <td width="auto" valign="top"> 
+												<div class="fr" id="reply_2862_buttons"> 
+													<strong><small class="snow">#$i - $list[addtime] &nbsp; <img src="$_URL/$_CONFIG[image]/reply.png" align="absmiddle" border="0" alt="回复 explon" onclick="replyOne('$list[nickname]')" class="clickable" /><span class="ops"></span></small></strong> 
+												</div> 
+                <div class="sep3"></div> 
+                <strong><a href="$_URL/$list[nickname]" class="dark">$list[nickname]</a></strong> 
+                <div class="sep5"></div> 
+                <div class="content reply_content">$list[content]</div> 
+            </td> 
+    </table> 
+</div>
+<!--{eval $i++}--> 
+<!--{/loop}--> 
+    </div> 
+              
+                <script type="text/javascript"> 
+                
+                </script> 
+                
+                
+            </div> 
+            
+            
+            <div class="sep20"></div> 
+            <!--{/if}--> 
+            <script type="text/javascript"> 
+            function v() {
+                r = document.getElementById('reply_content');
+                if (r.value.length == 0) {
+                    e = document.getElementById('e');
+                    e.innerHTML = "回复内容不能为空";
+                    return false;
+                }
+            }
+            
+            function c() {
+                e = document.getElementById('e');
+                if (e.innerHTML.length > 0) {
+                    e.innerHTML = '';
+                }
+            }
+            </script>
+             <!--{if $cookie_uid!=''}--> 
+            <div class="box"><form action="$_URL/t/$tid" method="post" onsubmit="return v()"> 
+                <div class="cell"><div class="fr fade">⬆ <a href="#_top" class="dark">回到顶部</a></div> 
+                <span class="fade">现在添加一条回复</span> 
+                
+                </div> 
+                <div class="cell"> 
+                    <textarea class="mll" name="content" id="reply_content"  onkeyup="c();"></textarea> 
+                    <div class="sep10"></div> 
+                    <div class="fr fade" id="e"></div> 
+                    <input type="submit" class="super normal button" value="发送" /> 
+                </div></form> 
+                
+                <div class="inner"><span style="line-height: 200%; font-size: 120%"><a href="$_URL/t/9" class="node">如何玩HNNU？</a></span></div> 
+            </div> 
+            <!--{/if}-->
+        </div> 
+    <div class="c"></div> 
+    </div> 
+    </div> 
+    {template footer} 

@@ -1,0 +1,68 @@
+
+<!-- 尾部 -->
+<div class="footer">
+	<div class="block">
+    	<div class="scissors"></div>
+        <div class="footer_nav">
+            <dl class="footer_type">
+                <dt>房型</dt>
+                <dd><a href="">一室户</a></dd>
+                <dd><a href="">一室一厅</a></dd>
+                <dd><a href="">二室户</a></dd>
+                <dd><a href="">二室一厅</a></dd>
+                <dd><a href="">二室两厅</a></dd>
+                <dd><a href="">三室一厅</a></dd>
+                <dd><a href="">三室两厅</a></dd>
+                <dd><a href="">别墅</a></dd>
+                <dd><a href="">其他</a></dd>
+            </dl>
+            <dl class="footer_style">
+                <dt>风格</dt>
+                <dd><a href="">简约</a></dd>
+                <dd><a href="">古典</a></dd>
+                <dd><a href="">流行</a></dd>
+                <dd><a href="">地中海</a></dd>
+                <dd><a href="">田园</a></dd>
+                <dd><a href="">美式</a></dd>
+                <dd><a href="">欧式</a></dd>
+                <dd><a href="">东南亚</a></dd>
+                <dd><a href="">日式</a></dd>
+                <dd><a href="">中式</a></dd>
+                <dd><a href="">非洲</a></dd>
+                <dd><a href="">英伦</a></dd>
+                <dd><a href="">法式</a></dd>
+                <dd><a href="">瑞典</a></dd>
+                <dd><a href="">意大利</a></dd>
+                <dd><a href="">俄罗斯</a></dd>
+                <dd><a href="">混搭</a></dd>
+                <dd><a href="">巴洛克</a></dd>
+                <dd><a href="">洛可可</a></dd>
+                <dd><a href="">LOFT风格</a></dd>
+                <dd><a href="">SOHO族</a></dd>
+                <dd><a href="">波普风</a></dd>
+                <dd><a href="">乐活族</a></dd>
+            </dl>
+            <dl class="footer_us">
+                <dt>联系我们</dt>
+                <dd><a href="" class="sina_microblog">关注新浪微薄</a></dd>
+                <dd><a href="" class="qq_microblog">关注腾讯微薄</a></dd>
+                <dd><a href="mailto:" class="contact_us">电邮联系我们</a></dd>
+                <dd><a href="" class="work">想要加入我们</a></dd>
+            </dl>
+        </div>
+        <div class="footer_copyright">
+        	<ul>
+            	<li><a href="">帮助</a></li>
+            	<li><a href="">隐私协议</a></li>
+            	<li><a href="">关于我们</a></li>
+            	<li><a href="mailto:">联系我们</a></li>
+            </ul>
+            <div class="copyright">©2011 九度装修设计交流平台 沪ICP备10025764号</div>
+        </div>
+    </div>
+</div>
+
+
+
+</body>
+</html>
